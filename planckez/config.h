@@ -1,0 +1,2 @@
+#define PLANCK_EZ_USER_LEDS
+#define TAPPING_TERM 200
