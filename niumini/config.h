@@ -1,3 +1,1 @@
-#pragma once
-#undef TAPPING_TOGGLE
-#define TAPPING_TOGGLE  1
+#define TAPPING_TERM 200
