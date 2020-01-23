@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_MACNAV] = LAYOUT_planck_mit(
  _______, _______, _______, _______, _______, _______, _______,    KC_PGUP,    KC_UP,   KC_PGDN,    _______,    _______,
- _______, KC_LCTL, KC_LALT, XXXXXXX, KC_LSFT, _______, G(KC_LEFT), KC_LEFT,    KC_DOWN, KC_RGHT,    G(KC_RGHT), _______,
+ KC_LGUI, KC_LCTL, KC_LALT, XXXXXXX, KC_LSFT, _______, G(KC_LEFT), KC_LEFT,    KC_DOWN, KC_RGHT,    G(KC_RGHT), _______,
  _______, _______, _______, _______, _______, _______, _______,    A(KC_LEFT), _______, A(KC_RGHT), _______,    _______,
  _______, _______, _______, _______, _______, _______,             _______,    _______, _______,    _______,    _______
 ),
