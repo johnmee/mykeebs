@@ -10,7 +10,6 @@ enum planck_layers {
   _ADJUST,
   _MACNAV,
   _MACGUI,
-  _GAME,
   _MOUSE,
   _FUNCT
 };
@@ -46,17 +45,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_LOWER] = LAYOUT_planck_mit(
-  KC_GRV,  KC_1,    KC_2,     KC_3,       KC_4,    KC_5,    KC_6,    KC_7,  KC_8,  KC_9,   KC_0,    _______,
-  _______, _______, _______,  _______,    _______, _______, KC_EQL,  KC_4,  KC_5,  KC_6,   KC_MINS, _______,
-  _______, G(KC_Z),  G(KC_X), G(KC_C),    G(KC_V), _______, _______, KC_1,  KC_2,  KC_3,   KC_PLUS, _______,
-  _______, _______, _______,  _______,    XXXXXXX, KC_BSPC,          KC_0,  KC_0,  KC_DOT, _______, _______
+  KC_GRV,  KC_1,    KC_2,       KC_3,       KC_4,    KC_5,    KC_6,    KC_7,  KC_8,  KC_9,   KC_0,    _______,
+  _______, G(KC_Z),  G(KC_X),   G(KC_C),    G(KC_V), _______, KC_EQL,  KC_4,  KC_5,  KC_6,   KC_MINS, _______,
+  _______, KC_QUOT, S(KC_QUOT), _______,    _______, _______, _______, KC_1,  KC_2,  KC_3,   KC_PLUS, _______,
+  _______, _______, _______,    _______,    XXXXXXX, KC_BSPC,          KC_0,  KC_0,  KC_DOT, _______, _______
 ),
 
 [_RAISE] = LAYOUT_planck_mit(
-  KC_TILD, S(KC_1),  S(KC_2), S(KC_3), S(KC_4), S(KC_5),    S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______,
-  _______, KC_PPLS,  KC_EQL,  KC_UNDS, KC_MINS, KC_QUOT,    KC_LABK, KC_LPRN, KC_LBRC, KC_LCBR, KC_PIPE, _______,
-  _______, _______, _______,  _______, _______, S(KC_QUOT), KC_RABK, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,
-  _______, _______,  _______, _______, _______, KC_DEL,              XXXXXXX, _______, _______, _______, _______
+  KC_TILD, S(KC_1), S(KC_2),    S(KC_3), S(KC_4), S(KC_5),   S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______,
+  _______, KC_PPLS, KC_EQL,     KC_UNDS, KC_MINS, _______,   KC_LABK, KC_LPRN, KC_LBRC, KC_LCBR, KC_PIPE, _______,
+  _______, KC_QUOT, S(KC_QUOT), _______, _______, _______,   KC_RABK, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,
+  _______, _______, _______,    _______, _______, KC_DEL,             XXXXXXX, _______, _______, _______, _______
 ),
 
 [_FUNCT] = LAYOUT_planck_mit(
@@ -68,8 +67,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_MACNAV] = LAYOUT_planck_mit(
  _______, _______, _______, _______, _______, _______, _______,    KC_PGUP,    KC_UP,   KC_PGDN,    _______,    _______,
- KC_LGUI, KC_LCTL, KC_LALT, XXXXXXX, KC_LSFT, _______, G(KC_LEFT), KC_LEFT,    KC_DOWN, KC_RGHT,    G(KC_RGHT), _______,
- _______, _______, _______, _______, _______, _______, _______,    A(KC_LEFT), _______, A(KC_RGHT), _______,    _______,
+ KC_LGUI, KC_LCTL, KC_LALT, XXXXXXX, KC_LSFT, _______, A(KC_LEFT), KC_LEFT,    KC_DOWN, KC_RGHT,    A(KC_RGHT), _______,
+ _______, _______, _______, _______, _______, _______, _______,    G(KC_LEFT), _______, G(KC_RGHT), _______,    _______,
  _______, _______, _______, _______, _______, _______,             _______,    _______, _______,    _______,    _______
 ),
 
@@ -81,17 +80,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_ADJUST] = LAYOUT_planck_mit(
- _______, _______, S(KC_PSCR), G(C(KC_Q)), _______, _______, _______,    TG(_GAME), RGB_HUD,  RGB_SAD, RGB_VAD, _______,
+ _______, _______, S(KC_PSCR), G(C(KC_Q)), _______, _______, _______,    _______,   RGB_HUD,  RGB_SAD, RGB_VAD, _______,
  _______, _______, _______,    _______,    _______, _______, _______,    RGB_MOD,   RGB_HUI,  RGB_SAI, RGB_VAI, _______,
  _______, _______, _______,    _______,    _______, _______, _______,    KC_MPLY,   KC_VOLD,  KC_VOLU, KC_MUTE, _______,
  _______, _______,   RESET,    _______,    _______, _______,             _______,   _______,  _______, _______, _______
-),
-
-[_GAME] = LAYOUT_planck_mit(
-  _______, _______, _______,  _______, _______, _______, _______,    _______,   _______,  _______, _______, _______,
-  _______, _______, _______,  KC_D,    _______, _______, _______,    _______,   _______,  _______, _______, _______,
-  _______, _______, _______,  _______, KC_V,    _______, _______,    _______,   _______,  _______, _______, _______,
-  _______, _______, _______,  _______, _______, _______,             _______,   _______,  _______, _______, _______
 ),
 
 [_MOUSE] = LAYOUT_planck_mit(
