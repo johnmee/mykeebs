@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_planck_mit(
   KC_GRV,  KC_1,    KC_2,       KC_3,     KC_4,    KC_5,    KC_6,    KC_7,  KC_8,  KC_9,   KC_0,    _______,
   _______, C(KC_Z), C(KC_X),    C(KC_C),  C(KC_V), _______, KC_EQL,  KC_4,  KC_5,  KC_6,   KC_MINS, _______,
-  _______, KC_QUOT, S(KC_QUOT), _______,  _______, _______, _______, KC_1,  KC_2,  KC_3,   KC_PLUS, _______,
+  _______, _______, _______,    _______,  _______, _______, _______, KC_1,  KC_2,  KC_3,   KC_PLUS, _______,
   _______, _______, _______,    _______,  XXXXXXX, KC_BSPC,          KC_0,  KC_0,  KC_DOT, _______, _______
 ),
 
 [_RAISE] = LAYOUT_planck_mit(
   KC_TILD, S(KC_1), S(KC_2),    S(KC_3), S(KC_4), S(KC_5),    S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______,
-  _______, KC_PPLS, KC_EQL,     KC_UNDS, KC_MINS, _______,    KC_LABK, KC_LPRN, KC_LBRC, KC_LCBR, KC_PIPE, _______,
-  _______, KC_QUOT, S(KC_QUOT), _______, _______, _______,    KC_RABK, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,
+  _______, _______, KC_EQL,     KC_UNDS, KC_MINS, _______,    KC_LABK, KC_LPRN, KC_LBRC, KC_LCBR, KC_PIPE, _______,
+  _______, _______, _______,    KC_PPLS, KC_QUOT, _______,    KC_RABK, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,
   _______, _______, _______,    _______, _______, KC_DEL,              XXXXXXX, _______, _______, _______, _______
 ),
 
