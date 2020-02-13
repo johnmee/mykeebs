@@ -11,7 +11,12 @@ GUI key on lower 2 key
 Bit of a mess generally as I have to use macOS at work (planckez), but use ubuntu linux at home (niumini) and would like them to use the same keys for
 the same things.  It works for some, but not all things: some editing (home/end/word) and jumping around windows/workspaces.
 ```
+$ git clone --recurse-submodules https://github.com/qmk/qmk_firmware.git
+$ cd qmk_firmware
+$ util/qmk_install.sh
+
 $ ln -s ~/projects/keebs/myplanck ~/projects/keebs/qmk_firmware/keyboards/planck/keymaps/meej
+$ make git-submodule
 $ make planck/ez:meej:flash
-$ make niu_mini:meej:flash
+$ (sudo) make niu_mini:meej:flash
 ```

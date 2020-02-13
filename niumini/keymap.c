@@ -50,10 +50,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_RAISE] = LAYOUT_planck_mit(
-  KC_TILD, S(KC_1), S(KC_2),    S(KC_3), S(KC_4), S(KC_5),    S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______,
-  _______, _______, KC_EQL,     KC_UNDS, KC_MINS, _______,    KC_LABK, KC_LPRN, KC_LBRC, KC_LCBR, KC_PIPE, _______,
-  _______, _______, _______,    KC_PPLS, KC_QUOT, S(KC_QUOT), KC_RABK, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,
-  _______, _______, _______,    _______, _______, KC_DEL,              XXXXXXX, _______, _______, _______, _______
+  KC_TILD, S(KC_1), S(KC_2), S(KC_3), S(KC_4),    S(KC_5),   S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______,
+  _______, KC_LPRN, KC_RPRN, KC_UNDS, KC_MINS,    KC_PPLS,   KC_LABK, KC_LPRN, KC_LBRC, KC_LCBR, KC_PIPE, _______,
+  _______, KC_LBRC, KC_RBRC, KC_QUOT, S(KC_QUOT), KC_EQL,    KC_RABK, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,
+  _______, _______, _______, _______, _______,    KC_DEL,             XXXXXXX, _______, _______, _______, _______
 ),
 
 [_FUNCT] = LAYOUT_planck_mit(
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_NAV] = LAYOUT_planck_mit(
  _______, _______, _______, _______, _______, _______, _______,    KC_PGUP,    KC_UP,   KC_PGDN, _______,    _______,
- _______, KC_LCTL, KC_LALT, XXXXXXX, KC_LSFT, _______, C(KC_LEFT), KC_LEFT,    KC_DOWN, KC_RGHT, C(KC_RGHT), _______,
+ KC_LGUI, KC_LCTL, KC_LALT, XXXXXXX, KC_LSFT, _______, C(KC_LEFT), KC_LEFT,    KC_DOWN, KC_RGHT, C(KC_RGHT), _______,
  _______, _______, _______, _______, _______, _______, _______,    KC_HOME,    _______, KC_END,  _______,    _______,
  _______, _______, _______, _______, _______, _______,             _______,    _______, _______, _______,    _______
 ),
