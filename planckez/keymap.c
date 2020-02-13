@@ -8,19 +8,20 @@ enum planck_layers {
   _LOWER,
   _RAISE,
   _ADJUST,
-  _MACNAV,
-  _MACGUI,
+  _NAV,
+  _GUI,
   _MOUSE,
+  _GAME,
   _FUNCT
 };
 
-#define LT_NAV     LT(_MACNAV, KC_D)
-#define LT_GUI     LT(_MACGUI, KC_V)
+#define LT_NAV     LT(_NAV, KC_D)
+#define LT_GUI     LT(_GUI, KC_V)
 #define RAISE      MO(_RAISE)
 #define LOWER      MO(_LOWER)
 #define ADJUST     MO(_ADJUST)
-#define NAV        MO(_MACNAV)
-#define GUI        MO(_MACGUI)
+#define NAV        MO(_NAV)
+#define GUI        MO(_GUI)
 #define FUNCT      MO(_FUNCT)
 #define MOUSE      MO(_MOUSE)
 
@@ -45,17 +46,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_LOWER] = LAYOUT_planck_mit(
-  KC_GRV,  KC_1,    KC_2,       KC_3,       KC_4,    KC_5,    KC_6,    KC_7,  KC_8,  KC_9,   KC_0,    _______,
-  _______, G(KC_Z),  G(KC_X),   G(KC_C),    G(KC_V), _______, KC_EQL,  KC_4,  KC_5,  KC_6,   KC_MINS, _______,
-  _______, KC_QUOT, S(KC_QUOT), _______,    _______, _______, _______, KC_1,  KC_2,  KC_3,   KC_PLUS, _______,
-  _______, _______, _______,    _______,    XXXXXXX, KC_BSPC,          KC_0,  KC_0,  KC_DOT, _______, _______
+  KC_GRV,  KC_1,    KC_2,       KC_3,     KC_4,    KC_5,    KC_6,    KC_7,  KC_8,  KC_9,   KC_0,    _______,
+  _______, C(KC_Z), C(KC_X),    C(KC_C),  C(KC_V), _______, KC_EQL,  KC_4,  KC_5,  KC_6,   KC_MINS, _______,
+  _______, _______, _______,    _______,  _______, _______, _______, KC_1,  KC_2,  KC_3,   KC_PLUS, _______,
+  _______, _______, _______,    _______,  XXXXXXX, KC_BSPC,          KC_0,  KC_0,  KC_DOT, _______, _______
 ),
 
 [_RAISE] = LAYOUT_planck_mit(
-  KC_TILD, S(KC_1), S(KC_2),    S(KC_3), S(KC_4), S(KC_5),    S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______,
-  _______, _______, KC_EQL,     KC_UNDS, KC_MINS, _______,    KC_LABK, KC_LPRN, KC_LBRC, KC_LCBR, KC_PIPE, _______,
-  _______, _______, _______,    KC_PPLS, KC_QUOT, S(KC_QUOT), KC_RABK, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,
-  _______, _______, _______,    _______, _______, KC_DEL,              XXXXXXX, _______, _______, _______, _______
+  KC_TILD, S(KC_1), S(KC_2), S(KC_3), S(KC_4),    S(KC_5),   S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______,
+  _______, KC_LPRN, KC_RPRN, KC_UNDS, KC_MINS,    KC_PPLS,   KC_LABK, KC_LPRN, KC_LBRC, KC_LCBR, KC_PIPE, _______,
+  _______, KC_LBRC, KC_RBRC, KC_QUOT, S(KC_QUOT), KC_EQL,    KC_RABK, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,
+  _______, _______, _______, _______, _______,    KC_DEL,             XXXXXXX, _______, _______, _______, _______
 ),
 
 [_FUNCT] = LAYOUT_planck_mit(
@@ -65,25 +66,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______,  _______, _______, _______, _______,          _______,   XXXXXXX,  _______, _______, _______
 ),
 
-[_MACNAV] = LAYOUT_planck_mit(
- _______, _______, _______, _______, _______, _______, _______,    KC_PGUP,  KC_UP,   KC_PGDN, _______,    _______,
- KC_LCTL, KC_LGUI, KC_LALT, XXXXXXX, KC_LSFT, _______, _______,    KC_LEFT,  KC_DOWN, KC_RGHT, _______,    _______,
- _______, _______, _______, _______, _______, _______, _______,    KC_HOME,  _______, KC_END,  _______,    _______,
- _______, _______, _______, _______, _______, _______,             _______,  _______, _______, _______,    _______
+[_NAV] = LAYOUT_planck_mit(
+ _______, _______, _______, _______, _______, _______, _______,    KC_PGUP,    KC_UP,   KC_PGDN, _______,    _______,
+ KC_LGUI, KC_LCTL, KC_LALT, XXXXXXX, KC_LSFT, _______, C(KC_LEFT), KC_LEFT,    KC_DOWN, KC_RGHT, C(KC_RGHT), _______,
+ _______, _______, _______, _______, _______, _______, _______,    KC_HOME,    _______, KC_END,  _______,    _______,
+ _______, _______, _______, _______, _______, _______,             _______,    _______, _______, _______,    _______
 ),
 
-[_MACGUI] = LAYOUT_planck_mit(
- _______, G(KC_1), G(KC_2),  G(KC_3), G(KC_4),  _______,   _______, C(A(KC_LEFT)), C(A(KC_ENT)),  C(A(KC_RGHT)), G(KC_MINS), G(KC_EQL),
- _______, _______, _______,  _______, _______,  _______,   _______, C(A(KC_E)),    C(A(KC_C)),    C(A(KC_T)),    G(KC_TILD), _______,
- _______, _______, KC_LCTL,  KC_LSFT, XXXXXXX,  _______,   _______, C(A(KC_UP)),   C(A(KC_BSPC)), C(A(KC_DOWN)), _______,    _______,
- _______, _______, _______,  _______, _______,  _______,            _______,      _______,       _______,       _______,    _______
+[_GUI] = LAYOUT_planck_mit(
+ _______, G(A(KC_F1)), G(A(KC_F2)), G(A(KC_F3)),  _______,  _______,  G(S(KC_F)), G(KC_C),    G(KC_UP),   G(C(KC_ESC)), _______, G(KC_UP),
+ _______, _______,     _______,     _______,      _______,  _______,  _______,    G(KC_LEFT), G(KC_DOWN), G(KC_RGHT),   _______, G(KC_DOWN),
+ _______, A(KC_TAB),   KC_LCTL,     KC_LSFT,      XXXXXXX,  _______,  _______,    G(KC_I),    G(KC_O),    _______,      _______, _______,
+ _______, _______,     _______,     _______,      _______,  _______,              _______,    _______,    _______,      _______, _______
 ),
 
 [_ADJUST] = LAYOUT_planck_mit(
- _______, _______, S(KC_PSCR), G(C(KC_Q)), _______, _______, _______,    _______,   RGB_HUD,  RGB_SAD, RGB_VAD, _______,
+ _______, _______, S(KC_PSCR), G(KC_L),    _______, _______, _______,  TG(_GAME),   RGB_HUD,  RGB_SAD, RGB_VAD, _______,
  _______, _______, _______,    _______,    _______, _______, _______,    RGB_MOD,   RGB_HUI,  RGB_SAI, RGB_VAI, _______,
  _______, _______, _______,    _______,    _______, _______, _______,    KC_MPLY,   KC_VOLD,  KC_VOLU, KC_MUTE, _______,
  _______, _______,   RESET,    _______,    _______, _______,             _______,   _______,  _______, _______, _______
+),
+
+[_GAME] = LAYOUT_planck_mit(
+  _______, _______, _______,  _______, _______, _______, _______,    _______,   _______,  _______, _______, _______,
+  _______, _______, _______,  KC_D,    _______, _______, _______,    _______,   _______,  _______, _______, _______,
+  _______, _______, _______,  _______, KC_V,    _______, _______,    _______,   _______,  _______, _______, _______,
+  _______, _______, _______,  _______, _______, _______,             _______,   _______,  _______, _______, _______
 ),
 
 [_MOUSE] = LAYOUT_planck_mit(
