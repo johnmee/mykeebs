@@ -16,7 +16,7 @@ enum planck_layers {
 };
 
 #define LT_NAV     LT(_NAV, KC_D)
-#define LT_GUI     LT(_GUI, KC_V)
+#define LT_GUI     LT(_GUI, KC_C)
 #define RAISE      MO(_RAISE)
 #define LOWER      MO(_LOWER)
 #define ADJUST     MO(_ADJUST)
@@ -35,20 +35,39 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define SFTLOCK    TD(TD_SFT_CAPS)
 
 
+enum custom_keycodes {
+    WM_LCENTER = 0,
+};
+
+// Macros
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    // Auto center window change for paperwm.
+    case WM_LCENTER:
+      if (record->event.pressed) {
+        tap_code16(G(KC_COMM));
+        tap_code16(G(KC_C));
+      }
+      break;
+  }
+  return true;
+};
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [_QWERTY] = LAYOUT_planck_mit(
   KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,    KC_BSPC,
   KC_TAB,   KC_A,    KC_S,    LT_NAV,  KC_F,    KC_G,     KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN, KC_ENT,
-  SFTLOCK,  KC_Z,    KC_X,    KC_C,    LT_GUI,  KC_B,     KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, SFTLOCK,
+  SFTLOCK,  KC_Z,    KC_X,    LT_GUI,  KC_V,    KC_B,     KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, SFTLOCK,
   KC_LCTL,  KC_LALT, GUI,     KC_LGUI, LOWER,   KC_SPC,          RAISE,  FUNCT,    KC_RGUI, KC_RALT, KC_RCTL
 ),
 
 [_LOWER] = LAYOUT_planck_mit(
   KC_GRV,  KC_1,    KC_2,       KC_3,     KC_4,    KC_5,    KC_6,    KC_7,  KC_8,  KC_9,   KC_0,    _______,
-  _______, C(KC_Z), C(KC_X),    C(KC_C),  C(KC_V), _______, KC_EQL,  KC_4,  KC_5,  KC_6,   KC_MINS, _______,
-  _______, C(KC_Z), C(KC_X),    C(KC_C),  C(KC_V), _______, _______, KC_1,  KC_2,  KC_3,   KC_PPLS, _______,
+  _______, C(KC_Z), C(KC_X),    C(KC_C),  C(KC_V), _______, _______, KC_4,  KC_5,  KC_6,   KC_MINS, _______,
+  _______, KC_EQL,  _______,    _______,  _______, _______, _______, KC_1,  KC_2,  KC_3,   KC_PPLS, _______,
   _______, _______, _______,    _______,  XXXXXXX, KC_BSPC,          KC_0,  KC_0,  KC_DOT, _______, _______
 ),
 
@@ -74,10 +93,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_GUI] = LAYOUT_planck_mit(
- _______,   _______, _______, _______, _______, _______,  G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),   G(KC_T),   _______,
- G(KC_TAB), _______, _______, _______, _______, _______,  G(KC_HOME), G(KC_COMM), G(KC_PGDN), G(KC_DOT), G(KC_END), _______,
- _______,   _______, _______, _______, XXXXXXX, _______,  _______,    G(KC_R),    G(KC_C),    _______,   _______,   _______,
- _______,   _______, _______, _______, _______, _______,              _______,    _______,    _______,   _______,   _______
+ _______,   _______, _______, _______, _______, _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),   G(KC_T),   _______,
+ _______,   _______, _______, _______, _______, _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), G(KC_DOT), G(KC_END), _______,
+ _______,   _______, _______, XXXXXXX, _______, _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC), _______,   _______,
+ _______,   _______, _______, _______, _______, _______,             _______,    _______,    _______,   _______,   _______
 ),
 
 [_ADJUST] = LAYOUT_planck_mit(
@@ -90,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_TRAIN] = LAYOUT_planck_mit(
   _______, _______, _______,  _______, _______, _______, _______,    _______,   _______,  _______, _______, _______,
   _______, _______, _______,  KC_D,    _______, _______, _______,    _______,   _______,  _______, _______, _______,
-  _______, _______, _______,  _______, KC_V,    _______, _______,    _______,   _______,  _______, _______, _______,
+  _______, _______, _______,  KC_C,    KC_V,    _______, _______,    _______,   _______,  _______, _______, _______,
   _______, _______, _______,  _______, _______, _______,             _______,   _______,  _______, _______, _______
 ),
 
@@ -121,8 +140,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+// Layers: raise, lower, adjust - turn on/off the little lights under the thumbs.
 int led_level = 50;
-
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
     switch (get_highest_layer(state)) {
