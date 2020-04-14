@@ -36,16 +36,24 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 
 enum custom_keycodes {
-    WM_LCENTER = 0,
+    WM_LCENTER = SAFE_RANGE,
+    WM_RCENTER
 };
 
 // Macros
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    // Auto center window change for paperwm.
+    // Auto center window left for paperwm.
     case WM_LCENTER:
       if (record->event.pressed) {
         tap_code16(G(KC_COMM));
+        tap_code16(G(KC_C));
+      }
+      break;
+    // Auto center window right for paperwm.
+    case WM_RCENTER:
+      if (record->event.pressed) {
+        tap_code16(G(KC_DOT));
         tap_code16(G(KC_C));
       }
       break;
@@ -93,10 +101,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_GUI] = LAYOUT_planck_mit(
- _______,   _______, _______, _______, _______, _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),   G(KC_T),   _______,
- _______,   _______, _______, _______, _______, _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), G(KC_DOT), G(KC_END), _______,
- _______,   _______, _______, XXXXXXX, _______, _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC), _______,   _______,
- _______,   _______, _______, _______, _______, _______,             _______,    _______,    _______,   _______,   _______
+ _______,   _______, _______, _______, _______, _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),    G(KC_T),   _______,
+ _______,   _______, _______, _______, _______, _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), WM_RCENTER, G(KC_END), _______,
+ _______,   _______, _______, XXXXXXX, _______, _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC),  _______,   _______,
+ _______,   _______, _______, _______, _______, _______,             _______,    _______,    _______,    _______,   _______
 ),
 
 [_ADJUST] = LAYOUT_planck_mit(
