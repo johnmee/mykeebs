@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_GUI] = LAYOUT_planck_mit(
  _______,   _______, _______, _______, _______, _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),    G(KC_T),   _______,
- _______,   _______, _______, _______, _______, _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), WM_RCENTER, G(KC_END), _______,
+ _______,   _______, _______, _______, _______, _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), WM_RCENTER, G(KC_DOT), _______,
  _______,   KC_LALT, KC_LCTL, XXXXXXX, KC_LSFT, _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC),  C(KC_ESC), _______,
  _______,   _______, _______, _______, _______, _______,             _______,    _______,    _______,    _______,   _______
 ),
