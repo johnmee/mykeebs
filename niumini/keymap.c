@@ -4,7 +4,7 @@ extern keymap_config_t keymap_config;
 
 enum planck_layers {
   _QWERTY,
-  _LOWER,
+  _NUM,
   _RAISE,
   _ADJUST,
   _NAV,
@@ -14,10 +14,10 @@ enum planck_layers {
   _FUNCT
 };
 
-#define LT_NAV     LT(_NAV, KC_D)
+#define LT_NUM     LT(_NUM, KC_D)
 #define LT_GUI     LT(_GUI, KC_C)
 #define RAISE      MO(_RAISE)
-#define LOWER      MO(_LOWER)
+#define NUM        MO(_NUM)
 #define ADJUST     MO(_ADJUST)
 #define NAV        MO(_NAV)
 #define GUI        MO(_GUI)
@@ -66,16 +66,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_QWERTY] = LAYOUT_planck_mit(
   KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,    KC_BSPC,
-  KC_TAB,   KC_A,    KC_S,    LT_NAV,  KC_F,    KC_G,     KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN, KC_ENT,
+  KC_TAB,   KC_A,    KC_S,    LT_NUM,  KC_F,    KC_G,     KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN, KC_ENT,
   SFTLOCK,  KC_Z,    KC_X,    LT_GUI,  KC_V,    KC_B,     KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, SFTLOCK,
-  KC_LCTL,  KC_LALT, GUI,     KC_LGUI, LOWER,   KC_SPC,          RAISE,  FUNCT,    KC_RGUI, KC_RALT, KC_RCTL
+  KC_LCTL,  KC_LALT, GUI,     KC_LGUI, NAV,     KC_SPC,          RAISE,  FUNCT,    KC_RGUI, KC_RALT, KC_RCTL
 ),
 
-[_LOWER] = LAYOUT_planck_mit(
+[_NUM] = LAYOUT_planck_mit(
   KC_GRV,  KC_1,    KC_2,       KC_3,     KC_4,    KC_5,    KC_6,    KC_7,  KC_8,  KC_9,   KC_0,    _______,
   _______, C(KC_Z), C(KC_X),    C(KC_C),  C(KC_V), _______, _______, KC_4,  KC_5,  KC_6,   KC_MINS, _______,
-  _______, KC_EQL,  _______,    _______,  _______, _______, _______, KC_1,  KC_2,  KC_3,   KC_PPLS, _______,
-  _______, _______, _______,    _______,  XXXXXXX, KC_BSPC,          KC_0,  KC_0,  KC_DOT, _______, _______
+  _______, _______, _______,    _______,  _______, _______, _______, KC_1,  KC_2,  KC_3,   KC_PPLS, _______,
+  _______, _______, _______,    _______,  XXXXXXX, KC_BSPC,          KC_0,  KC_0,  KC_DOT, KC_EQL,  _______
 ),
 
 [_RAISE] = LAYOUT_planck_mit(
@@ -93,10 +93,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_NAV] = LAYOUT_planck_mit(
- _______, _______, _______, _______, _______, _______, _______, KC_PGUP,    KC_UP,   KC_PGDN,    _______,  _______,
+ KC_GRV,  C(KC_Z), C(KC_X), C(KC_C), C(KC_V), _______, _______, KC_PGUP,    KC_UP,   KC_PGDN,    _______,  _______,
  KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX, KC_LSFT, _______, KC_HOME, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_END,   _______,
  _______, _______, _______, _______, _______, _______, _______, C(KC_LEFT), _______, C(KC_RGHT), _______,  _______,
- _______, _______, _______, _______, _______, _______,          _______,    _______, _______,    _______,  _______
+ _______, _______, _______, _______, _______, KC_BSPC,          _______,    _______, _______,    _______,  _______
 ),
 
 [_GUI] = LAYOUT_planck_mit(
@@ -150,6 +150,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 int led_level = 50;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+    state = update_tri_layer_state(state, _NAV, _RAISE, _ADJUST);
     return state;
 }
