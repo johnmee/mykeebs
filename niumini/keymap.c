@@ -6,8 +6,8 @@ enum planck_layers {
   _QWERTY,
   _NUM,
   _RAISE,
-  _ADJUST,
   _NAV,
+  _ADJUST,
   _GUI,
   _MOUSE,
   _TRAIN,
@@ -107,10 +107,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_ADJUST] = LAYOUT_planck_mit(
- _______, _______, S(KC_PSCR), G(KC_L),    _______, _______, _______,  TG(_TRAIN),  RGB_HUD,  RGB_SAD, RGB_VAD, _______,
- _______, _______, _______,    _______,    _______, _______, _______,    RGB_MOD,   RGB_HUI,  RGB_SAI, RGB_VAI, _______,
- _______, _______, _______,    _______,    _______, _______, _______,    KC_MPLY,   KC_VOLD,  KC_VOLU, KC_MUTE, _______,
- _______, _______,   RESET,    _______,    _______, _______,             _______,   _______,  _______, _______, _______
+ _______, _______, S(KC_PSCR), G(KC_L),  _______, _______, _______,  TG(_TRAIN),  RGB_HUD,  RGB_SAD, RGB_VAD, _______,
+ _______, KC_MPLY, KC_VOLD,    KC_VOLU,  KC_MUTE, _______, _______,    RGB_MOD,   RGB_HUI,  RGB_SAI, RGB_VAI, _______,
+ _______, _______, _______,    _______,  _______, _______, _______,    _______,   _______,  _______, _______, _______,
+ _______, _______,   RESET,    _______,  _______, _______,             _______,   _______,  _______, _______, _______
 ),
 
 [_TRAIN] = LAYOUT_planck_mit(
@@ -147,8 +147,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-int led_level = 50;
 
+// Two layer access to the ADJUST layer.
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _NAV, _RAISE, _ADJUST);
     return state;
