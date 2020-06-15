@@ -5,7 +5,7 @@ extern keymap_config_t keymap_config;
 enum planck_layers {
   _QWERTY,
   _NUM,
-  _RAISE,
+  _SYMS,
   _NAV,
   _ADJUST,
   _GUI,
@@ -16,7 +16,7 @@ enum planck_layers {
 
 #define LT_NUM     LT(_NUM, KC_D)
 #define LT_GUI     LT(_GUI, KC_C)
-#define RAISE      MO(_RAISE)
+#define SYMS       MO(_SYMS)
 #define NUM        MO(_NUM)
 #define ADJUST     MO(_ADJUST)
 #define NAV        MO(_NAV)
@@ -26,12 +26,24 @@ enum planck_layers {
 
 // Tap Dance: double tap the left shift key for shift-lock
 enum {
-  TD_SFT_CAPS = 0
+  TD_SFT_CAPS = 0,
+  TD_BCBR,
+  TD_BBRC,
+  TD_BPRN,
+  TD_BQUOT
 };
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [TD_SFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
+  [TD_SFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
+  [TD_BPRN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
+  [TD_BBRC] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
+  [TD_BCBR] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
+  [TD_BQUOT] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, S(KC_QUOT))
 };
 #define SFTLOCK    TD(TD_SFT_CAPS)
+#define TD_PRN     TD(TD_BPRN)
+#define TD_BRC     TD(TD_BBRC)
+#define TD_CBR     TD(TD_BCBR)
+#define TD_QUOT    TD(TD_BQUOT)
 
 
 enum custom_keycodes {
@@ -68,35 +80,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,    KC_BSPC,
   KC_TAB,   KC_A,    KC_S,    LT_NUM,  KC_F,    KC_G,     KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN, KC_ENT,
   SFTLOCK,  KC_Z,    KC_X,    LT_GUI,  KC_V,    KC_B,     KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, SFTLOCK,
-  KC_LCTL,  KC_LALT, GUI,     KC_LGUI, NAV,     KC_SPC,          RAISE,  FUNCT,    KC_RGUI, KC_RALT, KC_RCTL
+  KC_LCTL,  KC_LALT, GUI,     KC_LGUI, SYMS,    KC_SPC,       TT(NAV),   FUNCT,    KC_RGUI, KC_RALT, KC_RCTL
 ),
 
-[_NUM] = LAYOUT_planck_mit(
-  _______, _______, _______,    _______,  _______, _______, _______, KC_7,    KC_8,    KC_9,    KC_PAST, _______,
-  _______, _______, _______,    _______,  _______, _______, _______, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
-  _______, _______, _______,    _______,  _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_PPLS, _______,
-  _______, _______, _______,    _______,  _______, _______,          KC_0,    KC_0,    KC_DOT,  KC_EQL,  _______
-),
-
-[_RAISE] = LAYOUT_planck_mit(
+[_SYMS] = LAYOUT_planck_mit(
   KC_TILD, S(KC_1), S(KC_2), S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______,
-  _______, KC_LCBR, KC_RCBR, KC_UNDS,  KC_MINS,    KC_EQL,   XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, KC_PIPE, _______,
-  _______, _______, _______, KC_QUOT,  S(KC_QUOT), KC_PLUS,  XXXXXXX, KC_LBRC, KC_RBRC, _______, KC_BSLS, _______,
-  _______, _______, _______, _______, _______,     KC_DEL,            XXXXXXX, _______, _______, _______, _______
-),
-
-[_FUNCT] = LAYOUT_planck_mit(
-  KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   _______, _______, _______,   _______,  _______, _______, _______,
-  KC_F6,   KC_F7,    KC_F8,   KC_F9,   KC_F10,  _______, _______, _______,   _______,  _______, _______, _______,
-  KC_F11,  KC_F12,   _______, _______, _______, _______, _______, _______,   _______,  _______, _______, _______,
-  _______, _______,  _______, _______, _______, _______,          _______,   XXXXXXX,  _______, _______, _______
+  _______, TD_CBR,  TD_BRC,   TD_PRN,  KC_MINS,    KC_EQL,   XXXXXXX, _______, _______, _______, KC_PIPE, _______,
+  _______, _______, _______, TD_QUOT,  KC_UNDS,    KC_PLUS,  XXXXXXX, _______, _______, _______, KC_BSLS, _______,
+  _______, _______, _______, _______, _______,     KC_BSPC,            XXXXXXX, _______, _______, _______, _______
 ),
 
 [_NAV] = LAYOUT_planck_mit(
  KC_GRV,  C(KC_Z), C(KC_X), C(KC_C), C(KC_V), _______, _______, KC_PGUP,    KC_UP,   KC_PGDN,    _______,  _______,
  KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX, KC_LSFT, _______, KC_HOME, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_END,   _______,
  _______, _______, _______, _______, _______, _______, _______, C(KC_LEFT), _______, C(KC_RGHT), _______,  _______,
- _______, _______, _______, _______, _______, KC_BSPC,          _______,    _______, _______,    _______,  _______
+ _______, _______, _______, _______, _______,  KC_DEL,          _______,    _______, _______,    _______,  _______
 ),
 
 [_GUI] = LAYOUT_planck_mit(
@@ -111,6 +109,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  _______, KC_MPLY, KC_VOLD,    KC_VOLU,  KC_MUTE, _______, _______,    RGB_MOD,   RGB_HUI,  RGB_SAI, RGB_VAI, _______,
  _______, _______, _______,    _______,  _______, _______, _______,    _______,   _______,  _______, _______, _______,
  _______, _______,   RESET,    _______,  _______, _______,             _______,   _______,  _______, _______, _______
+),
+
+[_NUM] = LAYOUT_planck_mit(
+  _______, _______, _______,    _______,  _______, _______, _______, KC_7,    KC_8,    KC_9,    KC_PAST, _______,
+  _______, _______, _______,    _______,  _______, _______, _______, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
+  _______, _______, _______,    _______,  _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_PPLS, _______,
+  _______, _______, _______,    _______,  _______, _______,          KC_0,    KC_0,    KC_DOT,  KC_EQL,  _______
+),
+
+[_FUNCT] = LAYOUT_planck_mit(
+  KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   _______, _______, _______,   _______,  _______, _______, _______,
+  KC_F6,   KC_F7,    KC_F8,   KC_F9,   KC_F10,  _______, _______, _______,   _______,  _______, _______, _______,
+  KC_F11,  KC_F12,   _______, _______, _______, _______, _______, _______,   _______,  _______, _______, _______,
+  _______, _______,  _______, _______, _______, _______,          _______,   XXXXXXX,  _______, _______, _______
 ),
 
 [_TRAIN] = LAYOUT_planck_mit(
@@ -150,6 +162,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Two layer access to the ADJUST layer.
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _NAV, _RAISE, _ADJUST);
+    state = update_tri_layer_state(state, _NAV, _SYMS, _ADJUST);
     return state;
 }
