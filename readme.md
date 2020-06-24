@@ -2,6 +2,7 @@
 
 ```
 $ git clone --recurse-submodules https://github.com/qmk/qmk_firmware.git
+$ (git pull --recurse-submodules)   
 $ cd qmk_firmware
 $ util/qmk_install.sh
 
