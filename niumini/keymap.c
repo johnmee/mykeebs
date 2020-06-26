@@ -77,22 +77,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [_QWERTY] = LAYOUT_planck_mit(
-  KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,    KC_BSPC,
-  KC_TAB,   KC_A,    KC_S,    LT_NUM,  KC_F,    KC_G,     KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN, KC_ENT,
-  SFTLOCK,  KC_Z,    KC_X,    LT_GUI,  KC_V,    KC_B,     KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, SFTLOCK,
-  KC_LCTL,  KC_LALT, GUI,     FUNCT,   TT(NAV), KC_SPC,          SYMS,   GUI,      KC_RGUI, KC_RALT, KC_RCTL
+  KC_ESC,   KC_Q,    KC_W,    KC_E,      KC_R,    KC_T,     KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,    KC_BSPC,
+  KC_TAB,   KC_A,    KC_S,    LT_NUM,    KC_F,    KC_G,     KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN, KC_ENT,
+  SFTLOCK,  KC_Z,    KC_X,    KC_C,      KC_V,    KC_B,     KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, SFTLOCK,
+  KC_LCTL,  KC_LALT, FUNCT,   MO(_GUI),  TT(NAV), KC_SPC,          SYMS,   MO(_GUI), KC_RGUI, KC_RALT, KC_RCTL
 ),
 
 [_SYMS] = LAYOUT_planck_mit(
   KC_TILD, S(KC_1), S(KC_2),    S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6), S(KC_7), S(KC_8), KC_MINS, KC_PLUS, _______,
-  _______, TD_PRN,  TD_BRC,     TD_CBR,   KC_MINS,    KC_EQL,   S(KC_1), S(KC_2), S(KC_3), S(KC_4), KC_PIPE, _______,
-  _______, S(KC_QUOT), KC_QUOT, KC_PLUS,  KC_UNDS,    _______,  _______, _______, _______, _______, KC_BSLS, _______,
+  _______, TD_PRN,  TD_BRC,     KC_UNDS,  KC_MINS,    KC_EQL,   S(KC_1), S(KC_2), S(KC_3), S(KC_4), KC_PIPE, _______,
+  _______, TD_CBR,  KC_QUOT, S(KC_QUOT),  KC_PLUS,    _______,  _______, _______, _______, _______, KC_BSLS, _______,
   _______, _______, _______,    _______,  _______,     KC_DEL,           _______, _______, _______, _______, _______
 ),
 
 [_NAV] = LAYOUT_planck_mit(
  KC_GRV,  C(KC_Z), C(KC_X), C(KC_C), C(KC_V), _______, _______, KC_PGUP,    KC_UP,   KC_PGDN,    _______,  _______,
- KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX, KC_LSFT, _______, KC_HOME, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_END,   _______,
+ _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______, KC_HOME, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_END,   _______,
  _______, _______, _______, _______, _______, _______, _______, C(KC_LEFT), _______, C(KC_RGHT), _______,  _______,
  _______, _______, _______, _______, _______, KC_BSPC,          _______,    _______, _______,    _______,  _______
 ),
@@ -106,16 +106,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_FUNCT] = LAYOUT_planck_mit(
   _______, _______,  _______,  _______, _______, _______, _______, KC_F7,   KC_F8,  KC_F9, _______, _______,
-  KC_LGUI, KC_LALT,  KC_LCTL,  XXXXXXX, KC_LSFT, _______, _______, KC_F4,   KC_F5,  KC_F6, _______, _______,
+  _______, KC_LGUI,  KC_LALT,  KC_LCTL, KC_LSFT, _______, _______, KC_F4,   KC_F5,  KC_F6, _______, _______,
   _______, _______,  _______,  _______, _______, _______, _______, KC_F1,   KC_F2,  KC_F3, _______, _______,
   _______, _______,  _______,  _______, _______, _______,          KC_F10, KC_F11, KC_F12, _______, _______
 ),
 
 [_GUI] = LAYOUT_planck_mit(
  _______,   _______, _______, _______, _______, _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),    G(KC_T),   _______,
- _______,   _______, _______, _______, _______, _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), WM_RCENTER, G(KC_DOT), _______,
- _______,   KC_LALT, KC_LCTL, XXXXXXX, KC_LSFT, _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC),  C(KC_ESC), _______,
- _______,   _______, _______, _______, _______, _______,             _______,    _______,    _______,    _______,   _______
+ _______,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), WM_RCENTER, G(KC_DOT), _______,
+ _______,   _______, _______, _______, _______, _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC),  C(KC_ESC), _______,
+ _______,   _______, _______, _______, _______, _______,             A(KC_F1),   _______,    _______,    _______,   _______
 ),
 
 [_ADJUST] = LAYOUT_planck_mit(
