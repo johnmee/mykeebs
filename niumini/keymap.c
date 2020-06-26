@@ -112,10 +112,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_GUI] = LAYOUT_planck_mit(
- _______,   _______, _______, _______, _______, _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),    G(KC_T),   _______,
- _______,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), WM_RCENTER, G(KC_DOT), _______,
- _______,   _______, _______, _______, _______, _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC),  C(KC_ESC), _______,
- _______,   _______, _______, _______, _______, _______,             A(KC_F1),   _______,    _______,    _______,   _______
+ _______,   _______, _______, _______, _______,  _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),    G(KC_T),   _______,
+ _______,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,  _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), WM_RCENTER, G(KC_DOT), _______,
+ _______,   _______, _______, _______, _______,  _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC),  C(KC_ESC), _______,
+ _______,   _______, _______, _______, _______, A(KC_F1),             _______,   _______,    _______,    _______,   _______
 ),
 
 [_ADJUST] = LAYOUT_planck_mit(
