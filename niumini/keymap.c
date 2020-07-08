@@ -4,10 +4,10 @@ extern keymap_config_t keymap_config;
 
 enum planck_layers {
   _QWERTY,
-  _SYMS,
-  _NAV,
+  _RIGHT,
+  _LEFT,
   _NUM,
-  _FUNCT,
+  _FUNC,
   _ADJUST,
   _GUI,
   _MOUSE,
@@ -16,12 +16,9 @@ enum planck_layers {
 
 #define LT_NUM     LT(_NUM, KC_D)
 #define LT_GUI     LT(_GUI, KC_C)
-#define SYMS       MO(_SYMS)
 #define NUM        MO(_NUM)
 #define ADJUST     MO(_ADJUST)
-#define NAV        MO(_NAV)
 #define GUI        MO(_GUI)
-#define FUNCT      MO(_FUNCT)
 #define MOUSE      MO(_MOUSE)
 
 // Tap Dance: double tap the left shift key for shift-lock
@@ -77,20 +74,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [_QWERTY] = LAYOUT_planck_mit(
-  KC_ESC,   KC_Q,    KC_W,    KC_E,      KC_R,    KC_T,     KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,    KC_BSPC,
-  KC_TAB,   KC_A,    KC_S,    LT_NUM,    KC_F,    KC_G,     KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN, KC_ENT,
-  SFTLOCK,  KC_Z,    KC_X,    KC_C,      KC_V,    KC_B,     KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, SFTLOCK,
-  KC_LCTL,  KC_LALT, FUNCT,   MO(_GUI),  TT(NAV), KC_SPC,          SYMS,   MO(_GUI), KC_RGUI, KC_RALT, KC_RCTL
+  KC_ESC,   KC_Q,     KC_W,      KC_E,      KC_R,      KC_T,     KC_Y,  KC_U,   KC_I,      KC_O,    KC_P,    KC_BSPC,
+  KC_TAB,   KC_A,     KC_S,      KC_D,      KC_F,      KC_G,     KC_H,  KC_J,   KC_K,      KC_L,    KC_SCLN, KC_ENT,
+  SFTLOCK,  KC_Z,     KC_X,      KC_C,      KC_V,      KC_B,     KC_N,  KC_M,   KC_COMM,   KC_DOT,  KC_SLSH, SFTLOCK,
+  KC_LCTL,  MO(_GUI), MO(_FUNC), MO(_NUM),  MO(_LEFT), KC_SPC,    MO(_RIGHT),   MO(_GUI),  KC_RGUI, KC_RALT, KC_RCTL
 ),
 
-[_SYMS] = LAYOUT_planck_mit(
-  KC_TILD, S(KC_1), S(KC_2),    S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6), S(KC_7), S(KC_8), KC_MINS, KC_PLUS, _______,
-  _______, TD_PRN,  TD_BRC,     KC_UNDS,  KC_MINS,    KC_EQL,   S(KC_1), S(KC_2), S(KC_3), S(KC_4), KC_PIPE, _______,
-  _______, TD_CBR,  KC_QUOT, S(KC_QUOT),  KC_PLUS,    _______,  _______, _______, _______, _______, KC_BSLS, _______,
-  _______, _______, _______,    _______,  _______,     KC_DEL,           _______, _______, _______, _______, _______
+[_RIGHT] = LAYOUT_planck_mit(
+  KC_TILD,    S(KC_1),    S(KC_2),    S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6), S(KC_7),    G(KC_PGUP),  KC_MINS,    KC_PLUS, _______,
+  _______,    S(KC_QUOT), KC_QUOT,    KC_UNDS,  KC_MINS,    KC_EQL,   _______, WM_LCENTER, G(KC_PGDN),  WM_RCENTER, KC_PIPE, _______,
+  _______,    TD_PRN,     TD_BRC,     TD_CBR,   KC_PLUS,    KC_ASTR,  _______, G(KC_R),    G(KC_C),     _______,    KC_BSLS, _______,
+  _______,    _______,    _______,    _______,  _______,     KC_DEL,           _______,    _______,     _______,    _______, _______
 ),
 
-[_NAV] = LAYOUT_planck_mit(
+[_LEFT] = LAYOUT_planck_mit(
  KC_GRV,  C(KC_Z), C(KC_X), C(KC_C), C(KC_V), _______, _______, KC_PGUP,    KC_UP,   KC_PGDN,    _______,  _______,
  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______, KC_HOME, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_END,   _______,
  _______, _______, _______, _______, _______, _______, _______, C(KC_LEFT), _______, C(KC_RGHT), _______,  _______,
@@ -104,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______,    _______,  _______, _______,          KC_0,    KC_0,    KC_DOT,  KC_EQL,  _______
 ),
 
-[_FUNCT] = LAYOUT_planck_mit(
+[_FUNC] = LAYOUT_planck_mit(
   _______, _______,  _______,  _______, _______, _______, _______, KC_F7,   KC_F8,  KC_F9, _______, _______,
   _______, KC_LGUI,  KC_LALT,  KC_LCTL, KC_LSFT, _______, _______, KC_F4,   KC_F5,  KC_F6, _______, _______,
   _______, _______,  _______,  _______, _______, _______, _______, KC_F1,   KC_F2,  KC_F3, _______, _______,
@@ -162,6 +159,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Two layer access to the ADJUST layer.
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _NAV, _SYMS, _ADJUST);
+    state = update_tri_layer_state(state, _LEFT, _RIGHT, _ADJUST);
     return state;
 }
