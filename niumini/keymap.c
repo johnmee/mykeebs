@@ -14,8 +14,6 @@ enum planck_layers {
   _TRAIN
 };
 
-#define LT_NUM     LT(_NUM, KC_D)
-#define LT_GUI     LT(_GUI, KC_C)
 #define NUM        MO(_NUM)
 #define ADJUST     MO(_ADJUST)
 #define GUI        MO(_GUI)
@@ -83,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RIGHT] = LAYOUT_planck_mit(
   KC_TILD,    S(KC_1),    S(KC_2),    S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6), S(KC_7),    G(KC_PGUP),  KC_MINS,    KC_PLUS, _______,
   _______,    S(KC_QUOT), KC_QUOT,    KC_UNDS,  KC_MINS,    KC_EQL,   _______, WM_LCENTER, G(KC_PGDN),  WM_RCENTER, KC_PIPE, _______,
-  _______,    TD_PRN,     TD_BRC,     TD_CBR,   KC_PLUS,    KC_ASTR,  _______, G(KC_R),    G(KC_C),     _______,    KC_BSLS, _______,
+  _______,    TD_PRN,     TD_BRC,     TD_CBR,   KC_PLUS,    KC_ASTR,  _______, G(KC_R),    G(KC_C),     G(S(KC_ESC)), KC_BSLS, _______,
   _______,    _______,    _______,    _______,  _______,     KC_DEL,           _______,    _______,     _______,    _______, _______
 ),
 
@@ -109,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_GUI] = LAYOUT_planck_mit(
- _______,   _______, _______, _______, _______,  _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),    G(KC_T),   _______,
+ G(KC_ESC), _______, _______, _______, _______,  _______, G(KC_W),    G(KC_O),    G(KC_PGUP), G(KC_I),    G(KC_T),   _______,
  _______,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,  _______, G(KC_COMM), WM_LCENTER, G(KC_PGDN), WM_RCENTER, G(KC_DOT), _______,
  _______,   _______, _______, _______, _______,  _______, _______,    G(KC_R),    G(KC_C),    G(KC_ESC),  C(KC_ESC), _______,
  _______,   _______, _______, _______, _______, A(KC_F1),             _______,   _______,    _______,    _______,   _______
