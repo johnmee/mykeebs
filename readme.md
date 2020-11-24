@@ -9,7 +9,7 @@ $ util/qmk_install.sh
 $ ln -s ~/projects/keebs/myplanck ~/projects/keebs/qmk_firmware/keyboards/planck/keymaps/meej
 $ make git-submodule
 $ make planck/ez:meej:flash
-$ (sudo) make niu_mini:meej:flash
+$ make niu_mini:meej:flash  (plug the keeb directly into the computer--no usb hub!!)
 ```
 
 
