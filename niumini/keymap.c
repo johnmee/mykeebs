@@ -81,17 +81,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_L5] = LAYOUT_planck_mit(
-  KC_GRV,  C(KC_Z), C(KC_X), C(KC_C), C(KC_V),  _______, _______, KC_PGUP,    KC_UP,         KC_PGDN,    _______,  _______,
-  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,  _______, KC_HOME, KC_LEFT,    KC_DOWN,       KC_RGHT,    KC_END,   _______,
-  _______, _______, _______, _______, _______,  _______, _______, C(KC_LEFT), A(S(KC_COMM)), C(KC_RGHT), _______,  _______,
-  _______, _______, _______, _______, _______,  KC_SPC,           _______,    _______,       A(KC_F12),  C(KC_F5),  _______
+  KC_GRV,  C(KC_Z),    C(KC_X),    C(KC_C),    C(KC_V),     _______,      _______, KC_PGUP,    KC_UP,         KC_PGDN,    _______,  _______,
+  _______, KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,     _______,      KC_HOME, KC_LEFT,    KC_DOWN,       KC_RGHT,    KC_END,   _______,
+  _______, WM_LCENTER, G(KC_PGDN), G(KC_PGUP), WM_RCENTER,  G(S(KC_ESC)), _______, C(KC_LEFT), A(S(KC_COMM)), C(KC_RGHT), _______,  _______,
+  _______, G(KC_R),    G(KC_C),    G(S(KC_F)), _______,     KC_SPC,                   _______,    _______, A(KC_F12),     C(KC_F5),  _______
 ),
 
 [_L4] = LAYOUT_planck_mit(
- _______, G(S(KC_ESC)), _______, G(KC_PGUP),    _______, _______, _______, KC_7,    KC_8,    KC_9,    KC_PAST, _______,
- _______, _______,   WM_LCENTER, G(KC_PGDN), WM_RCENTER, _______, _______, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
- _______, _______,      G(KC_R),    G(KC_C), G(S(KC_F)), _______, _______, KC_1,    KC_2,    KC_3,    KC_PPLS, _______,
- _______, _______,      _______,    _______,    _______, _______,          KC_0,    KC_0,    KC_DOT,  KC_EQL,  _______
+ _______, _______,      _______, _______,    _______,    _______, _______, KC_7,    KC_8,    KC_9,    KC_PAST, _______,
+ _______, _______,      _______, _______,    _______,    _______, _______, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
+ _______, _______,      _______, _______,    _______,    _______, _______, KC_1,    KC_2,    KC_3,    KC_PPLS, _______,
+ _______, _______,      _______, _______,    _______,    _______,          KC_0,    KC_0,    KC_DOT,  KC_EQL,  _______
 ),
 
 [_R1] = LAYOUT_planck_mit(
