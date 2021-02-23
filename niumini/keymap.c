@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_L5] = LAYOUT_planck_mit(
   KC_GRV,  C(KC_Z),    C(KC_X),    C(KC_C),    C(KC_V),     _______,      _______, KC_PGUP,    KC_UP,         KC_PGDN,    _______,  _______,
   _______, KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,     _______,      KC_HOME, KC_LEFT,    KC_DOWN,       KC_RGHT,    KC_END,   _______,
-  _______, G(S(KC_ESC)), G(KC_PGUP), WM_LCENTER, WM_RCENTER,  G(KC_PGDN), _______, C(KC_LEFT), A(S(KC_COMM)), C(KC_RGHT), _______,  _______,
+  _______, G(KC_PGUP), G(KC_PGDN), WM_LCENTER, WM_RCENTER,  G(S(KC_ESC)), _______, C(KC_LEFT), A(S(KC_COMM)), C(KC_RGHT), _______,  _______,
   _______, G(KC_R),    G(KC_C),    G(S(KC_F)), _______,     KC_SPC,                   _______,    _______, A(KC_F12),     C(KC_F5),  _______
 ),
 
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_R1] = LAYOUT_planck_mit(
   KC_TILD,    S(KC_1),    S(KC_2),    S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6),  S(KC_7),    S(KC_8),  KC_MINS,    KC_PLUS, _______,
   _______,   S(KC_QUOT), KC_QUOT,    KC_UNDS,  KC_MINS,     KC_EQL,   _______,  _______,    _______,  _______,    KC_PIPE, _______,
-  _______,    TD_PRN,     TD_BRC,     TD_CBR,   KC_PLUS,    KC_ASTR,  _______,  _______,    _______,  _______,    KC_BSLS, _______,
+  _______,    TD_PRN,     TD_BRC,     TD_CBR,   KC_PLUS,    KC_ASTR,  _______,  KC_RCBR,    KC_RBRC,  KC_RPRN,    KC_BSLS, _______,
   _______,    _______,    _______,    _______,  _______,    KC_DEL,             _______,    _______,  _______,    _______, _______
 ),
 
