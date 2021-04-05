@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_GRV,  C(KC_Z),    C(KC_X),    C(KC_C),    C(KC_V),     _______,      _______, KC_PGUP,    KC_UP,         KC_PGDN,    _______,  _______,
   _______, KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,     _______,      KC_HOME, KC_LEFT,    KC_DOWN,       KC_RGHT,    KC_END,   _______,
   _______, G(KC_PGUP), G(KC_PGDN), WM_LCENTER, WM_RCENTER,  G(S(KC_ESC)), _______, C(KC_LEFT), A(S(KC_COMM)), C(KC_RGHT), _______,  _______,
-  _______, G(KC_C),    G(KC_R),    G(S(KC_F)), _______,     KC_SPC,                   _______,    _______, A(KC_F12),     C(KC_F5),  _______
+  _______, G(KC_C),    G(KC_R),    G(S(KC_F)), _______,     KC_BSPC,                   _______,    _______, A(KC_F12),     C(KC_F5),  _______
 ),
 
 [_L4] = LAYOUT_planck_mit(
