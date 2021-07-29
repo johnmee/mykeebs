@@ -81,23 +81,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_L1] = LAYOUT_planck_mit(
-  KC_GRV,  C(KC_Z),    C(KC_X),    C(KC_C),    C(KC_V),       C(KC_ESC),    _______, KC_PGUP,    KC_UP,         KC_PGDN,    _______,  _______,
-  KC_LGUI, _______,    KC_LALT,    KC_LCTL,    KC_LSFT,    G(S(KC_ESC)),    KC_HOME, KC_LEFT,    KC_DOWN,       KC_RGHT,    KC_END,   _______,
-  _______, _______,    _______, WM_LCENTER, WM_RCENTER,   _______,       _______, C(KC_LEFT), A(S(KC_COMM)), C(KC_RGHT), _______,  _______,
-  _______, G(KC_C),    G(KC_R),    G(S(KC_F)), _______,      KC_BSPC,       _______,    _______, A(KC_F12),     C(KC_F5),   _______
+  KC_GRV,  C(KC_Z),    C(KC_X),    C(KC_C),    C(KC_V),   C(KC_ESC),      _______, KC_PGUP,    KC_UP,         KC_PGDN,    _______,  _______,
+  _______, KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,  G(S(KC_ESC)),    KC_HOME, KC_LEFT,    KC_DOWN,       KC_RGHT,    KC_END,   _______,
+  _______, _______,    _______, WM_LCENTER, WM_RCENTER,  G(KC_C),         _______, C(KC_LEFT), A(S(KC_COMM)), C(KC_RGHT), _______,  _______,
+  _______, G(S(KC_F)), G(KC_R),    _______,    _______,   KC_BSPC,        _______,    _______, _______,       _______,   _______
 ),
 
 [_L2] = LAYOUT_planck_mit(
- _______, _______,      _______, _______,    _______,    _______, _______, KC_7,    KC_8,    KC_9,    KC_PAST, _______,
- _______, KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,   _______, _______, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
- _______, _______,      _______, G(KC_PGUP), G(KC_PGDN), _______, _______, KC_1,    KC_2,    KC_3,    KC_PPLS, _______,
- _______, _______,      _______, _______,    _______,    _______,          KC_0,    KC_0,    KC_DOT,  KC_EQL,  _______
+ _______,     _______,   _______, _______,    _______,   _______,       _______, KC_7,    KC_8,    KC_9,    KC_PAST, _______,
+ G(KC_PGUP),  KC_LGUI,   KC_LALT, KC_LCTL,    KC_LSFT,   G(C(KC_ESC)),  _______, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
+ G(KC_PGDN), C(KC_F5), A(KC_F12), _______,    _______,   _______,       _______, KC_1,    KC_2,    KC_3,    KC_PPLS, _______,
+ _______,     _______,   _______, _______,    _______,   _______,                KC_0,    KC_0,    KC_DOT,  KC_EQL,  _______
 ),
 
 [_R1] = LAYOUT_planck_mit(
   KC_TILD,    S(KC_1),    S(KC_2),    S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6),  S(KC_7),    S(KC_8),  KC_MINS,    KC_PLUS, _______,
   _______,   S(KC_QUOT),  KC_QUOT,    KC_UNDS,  KC_MINS,     KC_EQL,  _______,  _______,    _______,  _______,    KC_PIPE, _______,
-  _______,    KC_LPRN,    KC_LBRC,    KC_LCBR,  KC_PLUS,    KC_ASTR,  _______,  KC_RCBR,    KC_RBRC,  KC_RPRN,    KC_BSLS, _______,
+  _______,    KC_LPRN,    KC_LBRC,    KC_LCBR,  KC_PLUS,    KC_ASTR,  _______,  _______,    KC_RCBR,  KC_RBRC,    KC_RPRN, KC_BSLS,
   _______,    _______,    _______,    _______,  _______,    KC_DEL,             _______,    _______,  _______,    _______, _______
 ),
 
