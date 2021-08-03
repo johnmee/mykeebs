@@ -1,5 +1,21 @@
 # JohnMee layout
 
+Now it is something like
+
+```buildoutcfg
+# I do this to get into the qmk env.
+$ cd qmk
+$ source bin/activate   (because I installed a qmk pip package inside a venv, but then it clones the git repo)
+
+# I do this to flash (or just compile)
+$ qmk flash -kb niu_mini -km meej
+
+# I did this to establish my keebs...
+$ ln -s ~/projects/keebs/meej/niumini ~/projects/keebs/qmk/qmk_firmware/keyboards/niu_mini/keymaps/meej
+$ ln -s ~/projects/keebs/meej/planckez ~/projects/keebs/qmk/qmk_firmware/keyboards/planck/keymaps/meej
+```
+
+This is what it used to be:
 ```
 $ git clone --recurse-submodules https://github.com/qmk/qmk_firmware.git
 $ (git pull --recurse-submodules)   
@@ -11,14 +27,3 @@ $ make git-submodule
 $ make planck/ez:meej:flash
 $ make niu_mini:meej:flash  (plug the keeb directly into the computer--no usb hub!!)
 ```
-
-
-Default: QWERTY  
-Lower: Numpad on the right hand  
-Raise: Symbols on top row, symbols on left home row, opening brackets on right home, cut/copy/paste/undo on lower left row, closing brackets on right  
-Hold(D): Cursor navigation on the right hand, modifiers on left  
-Hold(V): GUI shortcuts on right hand  
-Function Keys layer from Raise+1 key  
-Adjust Layer with reset, volume, keyboard lighting, and lock  
-GUI key on lower 2 key  
-
