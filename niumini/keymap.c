@@ -12,6 +12,19 @@ enum planck_layers {
 };
 
 
+enum unicode_names {
+    MDASH,
+    SMILE,
+    THUMB
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [MDASH] = 0x2014,
+    [SMILE] = 0x1F642,
+    [THUMB] = 0x1F44D
+};
+
+
 // Double-tap the left shift key for shift-lock, and brackets/braces for closing.
 enum {
   TD_SFT_CAPS = 0,
@@ -81,24 +94,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_L1] = LAYOUT_planck_mit(
-  KC_GRV,  G(KC_C), WM_LCENTER, WM_RCENTER,    G(S(KC_ESC)),   C(KC_ESC),   _______,   KC_PGUP,    KC_UP,         KC_PGDN,    _______,  _______,
+  KC_GRV,  G(KC_C), WM_LCENTER, WM_RCENTER,    C(KC_ESC), G(S(KC_ESC)),     _______,   KC_PGUP,    KC_UP,         KC_PGDN,    _______,  _______,
   _______, KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,        XXXXXXX,     KC_HOME,   KC_LEFT,    KC_DOWN,       KC_RGHT,    KC_END,   _______,
   _______, C(KC_Z),    C(KC_X),    C(KC_C),    C(KC_V),        XXXXXXX,     _______,   C(KC_LEFT), A(S(KC_COMM)), C(KC_RGHT), _______,  _______,
   _______, G(S(KC_F)), G(KC_R),    _______,    _______,        KC_BSPC,                _______,    _______,       _______,    _______,  _______
 ),
 
 [_L2] = LAYOUT_planck_mit(
- _______,    _______,   _______,  _______, G(C(KC_ESC)),  _______,       _______, KC_7,    KC_8,    KC_9,    KC_PAST, _______,
+ _______,    _______,   _______,  _______,   _______, G(C(KC_ESC)),      _______, KC_7,    KC_8,    KC_9,    KC_PAST, _______,
  G(KC_PGUP), _______,   _______,  _______,  A(KC_F12),    _______,       _______, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
  G(KC_PGDN), C(KC_F5),  _______,  _______,    _______,    _______,       _______, KC_1,    KC_2,    KC_3,    KC_PPLS, _______,
  _______,     _______,   _______, _______,    _______,    _______,                KC_0,    KC_0,    KC_DOT,  KC_EQL,  _______
 ),
 
 [_R1] = LAYOUT_planck_mit(
-  KC_TILD,    S(KC_1),    S(KC_2),    S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6),  S(KC_7),    S(KC_8),  KC_MINS,    KC_PLUS, _______,
-  _______,   S(KC_QUOT),  KC_QUOT,    KC_UNDS,  KC_MINS,     KC_EQL,  _______,  _______,    _______,  _______,    KC_PIPE, _______,
-  _______,    KC_LPRN,    KC_LBRC,    KC_LCBR,  KC_PLUS,    KC_ASTR,  _______,  _______,    KC_RCBR,  KC_RBRC,    KC_RPRN, KC_BSLS,
-  _______,    _______,    _______,    _______,  _______,    KC_DEL,             _______,    _______,  _______,    _______, _______
+  KC_TILD,    S(KC_1),    S(KC_2),    S(KC_3),  S(KC_4),    S(KC_5),  S(KC_6),    S(KC_7),    S(KC_8),     KC_MINS,     KC_PLUS, _______,
+  _______,   S(KC_QUOT),  KC_QUOT,    KC_UNDS,  KC_MINS,     KC_EQL,  _______,    X(MDASH),   X(SMILE),    X(THUMB),    KC_PIPE, _______,
+  _______,    KC_LPRN,    KC_LBRC,    KC_LCBR,  KC_PLUS,    KC_ASTR,  _______,    _______,    KC_RCBR,     KC_RBRC,     KC_RPRN, KC_BSLS,
+  _______,    _______,    _______,    _______,  _______,    KC_DEL,               _______,    _______,     _______,     _______, _______
 ),
 
 [_R2] = LAYOUT_planck_mit(
