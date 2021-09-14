@@ -30,10 +30,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define C_UNDO  C(KC_Z)
 
 // Window Manager
-#define WM_PREV  G(KC_COMM)
-#define WM_NEXT  G(KC_DOT)
-#define WM_UP    G(KC_PGUP)
-#define WM_DOWN  G(KC_PGDN)
+#define WM_LEFT  G(KC_LEFT)
+#define WM_RGHT  G(KC_RGHT)
+#define WM_UP    G(KC_UP)
+#define WM_DOWN  G(KC_DOWN)
+#define WM_PGUP  G(KC_PGUP)
+#define WM_PGDN  G(KC_PGDN)
 #define WM_CNTR  G(KC_C)
 #define WM_VIEW  G(KC_TAB)
 #define WM_SC_VW G(S(KC_ESC))
@@ -54,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            MO(5),   MO(1), KC_LCTL,     KC_SPC,   MO(2), KC_RALT
+                                          KC_LCTL,   MO(1),   MO(4),     KC_SPC,   MO(2), KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
   // Navigation Layer
@@ -93,28 +95,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
-  // Numpad Layer
+  // PaperWM (left) Numpad (right) Layer
   [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, XXXXXXX,
+     WM_SC_VW,WM_SC_TG, WM_PGUP,   WM_UP, WM_PGDN, XXXXXXX,                      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,    KC_4,    KC_5,    KC_6, XXXXXXX, XXXXXXX,
+    G(KC_TAB), XXXXXXX, WM_LEFT, WM_DOWN, WM_RGHT, XXXXXXX,                      _______,    KC_4,    KC_5,    KC_6, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,    KC_1,    KC_2,    KC_3,  KC_DOT, XXXXXXX,
+      KC_LGUI, XXXXXXX, G(KC_I), WM_CNTR, G(KC_O), G(KC_R),                      _______,    KC_1,    KC_2,    KC_3, XXXXXXX, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX,    KC_0
-                                      //`--------------------------'  `--------------------------'
-  ),
-  // PaperWM Layer
-  [5] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     WM_SC_VW,WM_SC_TG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX,   WM_UP, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    G(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      G(KC_R), WM_PREV, WM_DOWN, WM_NEXT, WM_CNTR, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LGUI, XXXXXXX, XXXXXXX, WM_PREV, WM_NEXT, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, G(KC_I), G(KC_O), XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_RSFT
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    KC_LCTL,    KC_0,  KC_DOT
                                       //`--------------------------'  `--------------------------'
   )
 };
