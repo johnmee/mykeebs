@@ -2,6 +2,7 @@
 # https://beta.docs.qmk.fm/using-qmk/hardware-features
 # https://beta.docs.qmk.fm/developing-qmk/qmk-reference/getting_started_make_guide#rules-mk-options
 
+BOOTLOADER = caterina     # Pro-micro pin compatible controller
 BOOTMAGIC_ENABLE = no     # Access to the eeprom with a keyboard combo
 MOUSEKEY_ENABLE = no      # Keys to simulate mouse movements
 EXTRAKEY_ENABLE = yes     # System and Audio key control codes
@@ -11,7 +12,7 @@ SLEEP_LED_ENABLE = no     # Keyboard lights stay on although computer/cpu is in 
 NKRO_ENABLE = no          # Tell the OS to expect combinations of more than 6 keys simultaneously
 
 BACKLIGHT_ENABLE = no     # Specify the backlights pin in config.h
-RGBLIGHT_ENABLE = no      # Addressable RGB backlights.
+RGBLIGHT_ENABLE = yes     # Addressable RGB backlights.
 RGB_MATRIX_ENABLE = no    # There is an RGB LED on every key.
 
 MIDI_ENABLE = no          # MIDI is a sound module. We don't have sound.
