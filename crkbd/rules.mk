@@ -16,7 +16,7 @@ RGBLIGHT_ENABLE = yes     # Addressable RGB backlights.
 RGB_MATRIX_ENABLE = no    # There is an RGB LED on every key.
 
 MIDI_ENABLE = no          # MIDI is a sound module. We don't have sound.
-UNICODE_ENABLE = no      # Unicode chars via UC(<code point>); covers most languages and symbols but not emojis.
+UNICODE_ENABLE = no       # Unicode chars via UC(<code point>); covers most languages and symbols but not emojis.
 UNICODEMAP_ENABLE = no    # Unicode chars via X(map_index); you'll need a map table in a keymap file.
 UCIS_ENABLE = no          # Unicode chars via mnemonic; needs map table in a keymap file.
 AUDIO_ENABLE = no         # A speaker is wired to the C6 pin.
@@ -25,4 +25,4 @@ API_SYSEX_ENABLE = no     # Something to do with quantum Sysex API
 KEY_LOCK_ENABLE = yes     # Key locking; artificially hold down a BASIC KEYCODE. 7%.
 SPLIT_KEYBOARD = yes      # Dual MCUs need to work together.
 
-OLED_DRIVER_ENABLE = yes  # An OLED, or two, is attached.
+OLED_DRIVER_ENABLE = yes   # An OLED, or two, is attached.
