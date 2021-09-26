@@ -1,6 +1,6 @@
-// From rev1/config.h
 #pragma once
 
+#define UNICODE_SELECTED_MODES UC_LNX
 #define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
 #define DIODE_DIRECTION COL2ROW
@@ -10,7 +10,6 @@
 
 #ifdef RGBLIGHT_ENABLE
 #    define RGBLED_NUM 12 // Number of LEDs
-#    define RGBLED_SPLIT \
-        { 6, 6 }
+#    define RGBLED_SPLIT { 6, 6 }
 #    define RGBLIGHT_SPLIT
 #endif
