@@ -113,9 +113,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
     G(KC_TAB), XXXXXXX, WM_LEFT, WM_PGDN, WM_RGHT, XXXXXXX,                      XXXXXXX,    KC_4,    KC_5,    KC_6, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LGUI, XXXXXXX, G(KC_I), WM_CNTR, G(KC_O), G(KC_R),                      XXXXXXX,    KC_1,    KC_2,    KC_3, XXXXXXX, KC_RCTL,
+      KC_LGUI, XXXXXXX, G(KC_I), WM_CNTR, G(KC_O), G(KC_R),                      XXXXXXX,    KC_1,    KC_2,    KC_3,  KC_DOT, KC_RCTL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,     KC_DEL,  KC_DOT,    KC_0
+                                          XXXXXXX, XXXXXXX, XXXXXXX,     KC_DEL,    KC_0, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                      //`--------------------------'  `--------------------------'
 //  )
 
-
+#ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   if (!is_keyboard_master()) {
     return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
@@ -213,12 +213,15 @@ void oled_task_user(void) {
         oled_render_logo();
     }
 }
+#endif
 
 // Macros
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef OLED_ENABLE
   if (record->event.pressed) {
     set_keylog(keycode, record);
   }
+#endif
   switch (keycode) {
     // Reset gnome display manager for paperwm.
     case WM_RSET:
