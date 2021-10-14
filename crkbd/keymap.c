@@ -31,7 +31,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Window Manager (Gnome PaperWM)
 #define WM_LEFT  G(KC_LEFT)
+#define WM_MONL  G(S(KC_LEFT))
 #define WM_RGHT  G(KC_RGHT)
+#define WM_MONR  G(S(KC_RGHT))
 #define WM_UP    G(KC_UP)
 #define WM_DOWN  G(KC_DOWN)
 #define WM_PGUP  G(KC_PGUP)
@@ -89,9 +91,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      KC_TILDE, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_DQUO, KC_MINS, KC_ASTR,                      XXXXXXX,  KC_EQL, KC_LBRC, KC_RBRC, KC_PIPE, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT, KC_MINS,  KC_EQL,                      XXXXXXX, KC_ASTR, KC_LBRC, KC_RBRC, KC_PIPE, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT, KC_UNDS,  KC_GRV,                      XXXXXXX, KC_PLUS, KC_LCBR, KC_RCBR, KC_BSLS, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, KC_DQUO, KC_UNDS,  KC_GRV,                      XXXXXXX, KC_PLUS, KC_LCBR, KC_RCBR, KC_BSLS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX,   MO(3), XXXXXXX,    XXXXXXX, XXXXXXX, KC_LALT
                                       //`--------------------------'  `--------------------------'
@@ -113,11 +115,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      WM_SC_VW,WM_SC_TG,   WM_UP, WM_PGUP, WM_DOWN, WM_FULL,                      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    G(KC_TAB), XXXXXXX, WM_LEFT, WM_PGDN, WM_RGHT, XXXXXXX,                      KC_MINS,    KC_4,    KC_5,    KC_6, XXXXXXX, XXXXXXX,
+    G(KC_TAB), WM_MONL, WM_LEFT, WM_PGDN, WM_RGHT, WM_MONR,                      KC_MINS,    KC_4,    KC_5,    KC_6, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LGUI, XXXXXXX, G(KC_I), WM_CNTR, G(KC_O), G(KC_R),                      KC_UNDS,    KC_1,    KC_2,    KC_3, XXXXXXX,  KC_RCTL,
+      KC_LGUI, XXXXXXX, G(KC_I), WM_CNTR, G(KC_O), G(KC_R),                      KC_UNDS,    KC_1,    KC_2,    KC_3, XXXXXXX, KC_RCTL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    KC_0,       KC_0,  KC_DOT
+                                          XXXXXXX, XXXXXXX, XXXXXXX,       KC_0,    KC_0,  KC_DOT
                                       //`--------------------------'  `--------------------------'
   )
 };
