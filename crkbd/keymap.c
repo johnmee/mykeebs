@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL,   MO(1),   MO(4),     KC_SPC,   MO(2), KC_RCTL
+                                          KC_LALT,   MO(1),   MO(4),     KC_SPC,   MO(2), KC_RCTL
                                       //`--------------------------'  `--------------------------'
   ),
   // Navigation Layer
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  C_LEFT, XXXXXXX,  C_RGHT, XXXXXXX, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    KC_BSPC,   MO(3),  KC_DEL
+                                          KC_LALT, XXXXXXX, XXXXXXX,    KC_BSPC,   MO(3), KC_RCTL
                                       //`--------------------------'  `--------------------------'
   ),
   // Symbols Layer
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, KC_DQUO, KC_UNDS, XXXXXXX,                      XXXXXXX, KC_PLUS, KC_LCBR, KC_RCBR, KC_BSLS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,   MO(3), XXXXXXX,    XXXXXXX, XXXXXXX, KC_LALT
+                                          KC_LALT,   MO(3), XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
   // "Adjust" Layer... multimedia? lights?
@@ -103,11 +103,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_TOG, XXXXXXX, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                     X(NDASH),X(THUMB),X(SMILE), XXXXXXX, XXXXXXX, XXXXXXX,
+      RGB_TOG, RGB_SAI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                     X(NDASH),X(THUMB),X(SMILE), XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_HUI, RGB_SAI, KC_MPLY, KC_VOLD, KC_VOLU, XXXXXXX,                     X(MDASH),   X(OK), X(ROFL), X(WINK), XXXXXXX, XXXXXXX,
+      RGB_HUI, KC_MPLY, KC_VOLD, KC_VOLU, XXXXXXX, XXXXXXX,                     X(MDASH),   X(OK), X(ROFL), X(WINK), XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          KC_LALT, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_RCTL
                                       //`--------------------------'  `--------------------------'
   ),
   // PaperWM (left) Numpad (right) Layer
@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI, XXXXXXX, G(KC_I), WM_CNTR, G(KC_O), G(KC_R),                      KC_UNDS,    KC_1,    KC_2,    KC_3, XXXXXXX, KC_RCTL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,       KC_0,    KC_0,  KC_DOT
+                                          KC_LALT, XXXXXXX, XXXXXXX,       KC_0,    KC_0,  KC_DOT
                                       //`--------------------------'  `--------------------------'
   )
 };
