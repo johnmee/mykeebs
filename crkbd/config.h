@@ -5,6 +5,8 @@
 #define SOFT_SERIAL_PIN D2
 #define DIODE_DIRECTION COL2ROW
 
+#define MASTER_RIGHT
+
 /* ws2812 RGB LED */
 #define RGB_DI_PIN      D3
 

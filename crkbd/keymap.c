@@ -91,9 +91,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      KC_TILDE, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT, KC_MINS,  KC_EQL,                      XXXXXXX, KC_ASTR, KC_LBRC, KC_RBRC, KC_PIPE, XXXXXXX,
+       KC_GRV, XXXXXXX, XXXXXXX, KC_QUOT, KC_MINS,  KC_EQL,                      XXXXXXX, KC_ASTR, KC_LBRC, KC_RBRC, KC_PIPE, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_DQUO, KC_UNDS,  KC_GRV,                      XXXXXXX, KC_PLUS, KC_LCBR, KC_RCBR, KC_BSLS, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, KC_DQUO, KC_UNDS, XXXXXXX,                      XXXXXXX, KC_PLUS, KC_LCBR, KC_RCBR, KC_BSLS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX,   MO(3), XXXXXXX,    XXXXXXX, XXXXXXX, KC_LALT
                                       //`--------------------------'  `--------------------------'
