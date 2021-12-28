@@ -1,14 +1,11 @@
 # JohnMee layout
 
-Now it is something like
+I installed it with linuxbrew this time.
+And set `~/.config/qmk/qmk.ini` defaults to `crkbd` and `meej`.
 
 ```buildoutcfg
-# I do this to get into the qmk env.
-$ cd qmk
-$ source bin/activate   (because I installed a qmk pip package inside a venv, but then it clones the git repo)
-
-# I do this to flash (or just compile)
-$ qmk flash -kb niu_mini -km meej
+# So now I do this to flash (and press the little reset button)
+$ qmk flash -bl dfu
 
 # I did this to establish my keebs...
 $ ln -s ~/projects/keebs/meej/niumini ~/projects/keebs/qmk/qmk_firmware/keyboards/niu_mini/keymaps/meej

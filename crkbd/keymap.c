@@ -71,15 +71,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT,   MO(1),   MO(4),     KC_SPC,   MO(2), KC_RCTL
+                                          KC_LCTL,   MO(1),   MO(4),     KC_SPC,   MO(2), KC_RCTL
                                       //`--------------------------'  `--------------------------'
   ),
   // Navigation Layer
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), XXXXXXX,                      XXXXXXX, KC_PGUP,  KC_UP,  KC_PGDN, XXXXXXX,  KC_DEL,
+       KC_GRV, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), XXXXXXX,                      XXXXXXX, KC_PGUP,  KC_UP,  KC_PGDN, XXXXXXX,  KC_DEL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_LCTL, KC_LSFT, XXXXXXX,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, XXXXXXX,
+      XXXXXXX, XXXXXXX, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  C_LEFT, XXXXXXX,  C_RGHT, XXXXXXX, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -91,9 +91,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      KC_TILDE, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_GRV, XXXXXXX, XXXXXXX, KC_DQUO, KC_MINS,  KC_EQL,                      XXXXXXX, KC_ASTR, KC_LBRC, KC_RBRC, KC_PIPE, XXXXXXX,
+      XXXXXXX, XXXXXXX, KC_ASTR, KC_PLUS, KC_MINS,  KC_EQL,                      XXXXXXX, KC_LBRC, KC_DQUO, KC_RBRC, KC_PIPE, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT, KC_UNDS, XXXXXXX,                      XXXXXXX, KC_PLUS, KC_LCBR, KC_RCBR, KC_BSLS, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_UNDS, XXXXXXX,                      XXXXXXX, KC_LCBR, KC_QUOT, KC_RCBR, KC_BSLS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LALT,   MO(3), XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
