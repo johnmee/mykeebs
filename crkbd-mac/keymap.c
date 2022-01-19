@@ -113,9 +113,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // MacOS (left) Numpad (right) Layer
   [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     WM_SC_VW,WM_SC_TG,   WM_UP,C(KC_UP), WM_DOWN, WM_FULL,                      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, KC_BSPC,
+      C(KC_1),WM_SC_TG,   WM_UP,C(KC_UP), WM_DOWN, WM_FULL,                      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    G(KC_TAB), WM_MONL, WM_LEFT, WM_CNTR, WM_RGHT, WM_MONR,                      KC_MINS,    KC_4,    KC_5,    KC_6,  KC_DOT, XXXXXXX,
+    G(KC_TAB), WM_MONL, WM_LEFT, XXXXXXX, WM_RGHT, WM_MONR,                      KC_MINS,    KC_4,    KC_5,    KC_6,  KC_DOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
     G(KC_SPC), XXXXXXX, G(KC_I), WM_PGDN, G(KC_O), G(KC_R),                      KC_UNDS,    KC_1,    KC_2,    KC_3, XXXXXXX, KC_RCTL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -227,14 +227,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     set_keylog(keycode, record);
   }
 #endif
-  switch (keycode) {
-    // Reset gnome display manager for paperwm.
-    case WM_RSET:
-      if (record->event.pressed) {
-        tap_code16(A(KC_F2));
-        SEND_STRING(SS_DELAY(700) "r" SS_TAP(X_ENT));
-      }
-      break;
-  }
   return true;
 };
