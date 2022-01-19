@@ -1,6 +1,5 @@
 #pragma once
 
-#define UNICODE_SELECTED_MODES UC_LNX
 #define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
 #define DIODE_DIRECTION COL2ROW
