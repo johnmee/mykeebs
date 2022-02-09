@@ -12,19 +12,19 @@ SLEEP_LED_ENABLE = no     # Keyboard lights stay on although computer/cpu is in 
 NKRO_ENABLE = no          # Tell the OS to expect combinations of more than 6 keys simultaneously
 
 BACKLIGHT_ENABLE = no     # Specify the backlights pin in config.h
-RGBLIGHT_ENABLE = yes     # Addressable RGB backlights.
-RGBLIGHT_SLEEP = no      # Turn out the lights when the host sleeps
+RGBLIGHT_ENABLE = no      # Addressable RGB backlights.
+RGBLIGHT_SLEEP = no       # Turn out the lights when the host sleeps
 RGBLIGHT_SPLIT  = no      # Sync
-RGB_MATRIX_ENABLE = no    # There is an RGB LED on every key.
+RGB_MATRIX_ENABLE = yes   # There is an RGB LED on every key.
 
 MIDI_ENABLE = no          # MIDI is a sound module. We don't have sound.
 UNICODE_ENABLE = no       # Unicode chars via UC(<code point>); covers most languages and symbols but not emojis.
-UNICODEMAP_ENABLE = yes    # Unicode chars via X(map_index); you'll need a map table in a keymap file.
+UNICODEMAP_ENABLE = yes   # Unicode chars via X(map_index); you'll need a map table in a keymap file.
 UCIS_ENABLE = no          # Unicode chars via mnemonic; needs map table in a keymap file.
 AUDIO_ENABLE = no         # A speaker is wired to the C6 pin.
 VARIABLE_TRACE = no       # Debugging/unit-testing trace on variables
 API_SYSEX_ENABLE = no     # Something to do with quantum Sysex API
-KEY_LOCK_ENABLE = no     # Key locking; artificially hold down a BASIC KEYCODE. 7%.
+KEY_LOCK_ENABLE = no      # Key locking; artificially hold down a BASIC KEYCODE. 7%.
 SPLIT_KEYBOARD = yes      # Dual MCUs need to work together.
 
-OLED_ENABLE = yes          # An OLED, or two, is attached.
+OLED_ENABLE = no          # An OLED, or two, is attached.
