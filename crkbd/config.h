@@ -15,5 +15,7 @@
     #define RGBLED_SPLIT { 6, 6 }
     #define RGBLIGHT_SPLIT
     #define RGBLIGHT_SLEEP
-    #define RGBLIGHT_DEFAULT_HUE  169
+    #define RGBLIGHT_DEFAULT_HUE  160   // Blue
 #endif
+
+#define TAPPING_TERM 175

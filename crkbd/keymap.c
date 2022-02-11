@@ -18,10 +18,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 #include <stdio.h>
 
+
+// Tap Dance
+enum {
+    TD_CTL_ALT,
+    TD_CAPS,
+};
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [TD_CTL_ALT] = ACTION_TAP_DANCE_DOUBLE(KC_RCTL, KC_RALT),
+    [TD_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
+};
+
 // Keys
 #define SPC_CTL LCTL_T(KC_SPC)  // tap space, hold ctrl
 #define SPC_SFT RSFT_T(KC_SPC)  // tap space, hold shift
 #define SFT_ENT RSFT_T(KC_ENT)  // tap enter, hold shift
+#define CTL_ALT TD(TD_CTL_ALT)  // hold ctrl, tap-hold alt
+#define SFT_CAP TD(TD_CAPS)     // hold sft, double tap capslock
 #define C_RGHT  C(KC_RGHT)      // control(word) right
 #define C_LEFT  C(KC_LEFT)      // control(word) left
 #define C_CUT   C(KC_X)
@@ -61,6 +74,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [OK] = 0x1F44C
 };
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Base Layer
   [0] = LAYOUT_split_3x6_3(
@@ -69,9 +83,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_ENT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
+      SFT_CAP,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, SFT_CAP,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            MO(3),   MO(1),   MO(4),     KC_SPC,   MO(2), KC_RCTL
+                                            MO(3),   MO(1),   MO(4),     KC_SPC,   MO(2), CTL_ALT
                                       //`--------------------------'  `--------------------------'
   ),
   // Navigation Layer
