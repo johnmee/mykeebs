@@ -11,7 +11,9 @@
 #define RGB_DI_PIN      D3
 
 #ifdef RGBLIGHT_ENABLE
-#    define RGBLED_NUM 12 // Number of LEDs
-#    define RGBLED_SPLIT { 6, 6 }
-#    define RGBLIGHT_SPLIT
+    #define RGBLED_NUM 12 // Number of LEDs
+    #define RGBLED_SPLIT { 6, 6 }
+    #define RGBLIGHT_SPLIT
+    #define RGBLIGHT_SLEEP
+    #define RGBLIGHT_DEFAULT_HUE  169
 #endif

@@ -1,5 +1,9 @@
 # JohnMee layout
 
+```
+qmk flash -kb crkbd -km meej -bl :dfu-split-right
+```
+
 I installed it with linuxbrew this time.
 And set `~/.config/qmk/qmk.ini` defaults to `crkbd` and `meej`.
 
