@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            MO(3),   MO(1),   MO(4),     KC_SPC,   MO(2), CTL_ALT
+                                            MO(3),   MO(1),   MO(4),     KC_SPC,   MO(2), KC_RCTL
                                       //`--------------------------'  `--------------------------'
   ),
   // Navigation Layer
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  C_LEFT, XXXXXXX,  C_RGHT, XXXXXXX, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    KC_BSPC, XXXXXXX,  KC_DEL
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    KC_BSPC,  KC_DEL, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
   // Symbols Layer
@@ -115,11 +115,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Function Layer... multimedia. lights.
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      RGB_VAI, RGB_SAI, RGB_HUI, XXXXXXX, XXXXXXX, WM_RSET,                      XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10, XXXXXXX,
+      RGB_VAI, RGB_SAI, RGB_HUI, XXXXXXX, XXXXXXX, WM_RSET,                       KC_F10,   KC_F7,   KC_F8,   KC_F9, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_F11,   KC_F4,   KC_F5,   KC_F6, KC_RALT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        MO(5), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12, KC_RSFT,
+        MO(5), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_F12,   KC_F1,   KC_F2,   KC_F3, KC_RCTL, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, XXXXXXX, XXXXXXX,    KC_MPLY, KC_VOLD, KC_VOLU
                                       //`--------------------------'  `--------------------------'
@@ -127,13 +127,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // PaperWM (left) Numpad (right) Layer
   [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_LGUI, XXXXXXX,   WM_UP, WM_PGUP, WM_DOWN, WM_FULL,                      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, KC_BSPC,
+      KC_LGUI, XXXXXXX,   WM_UP, WM_PGUP, WM_DOWN, WM_FULL,                      XXXXXXX,    KC_7,    KC_8,    KC_9, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    G(KC_TAB), WM_MONL, WM_LEFT, WM_CNTR, WM_RGHT, WM_MONR,                      XXXXXXX,    KC_4,    KC_5,    KC_6, XXXXXXX, XXXXXXX,
+    G(KC_TAB), WM_MONL, WM_LEFT, WM_CNTR, WM_RGHT, WM_MONR,                      XXXXXXX,    KC_4,    KC_5,    KC_6, KC_RALT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     WM_SC_VW,WM_SC_TG, G(KC_I), WM_PGDN, G(KC_O), G(KC_R),                       KC_DOT,    KC_1,    KC_2,    KC_3, XXXXXXX, KC_RCTL,
+     WM_SC_VW,WM_SC_TG, G(KC_I), WM_PGDN, G(KC_O), G(KC_R),                       KC_DOT,    KC_1,    KC_2,    KC_3, KC_RCTL, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT, XXXXXXX, XXXXXXX,       KC_0,    KC_0,  KC_DOT
+                                          XXXXXXX, XXXXXXX, XXXXXXX,       KC_0,    KC_0,  KC_DOT
                                       //`--------------------------'  `--------------------------'
   ),
   // Emoji Layer

@@ -11,11 +11,13 @@
 #define RGB_DI_PIN      D3
 
 #ifdef RGBLIGHT_ENABLE
+    #undef RGBLED_NUM
     #define RGBLED_NUM 12 // Number of LEDs
+    #undef RGBLED_SPLIT
     #define RGBLED_SPLIT { 6, 6 }
     #define RGBLIGHT_SPLIT
     #define RGBLIGHT_SLEEP
-    #define RGBLIGHT_DEFAULT_HUE  160   // Blue
+    #define RGBLIGHT_DEFAULT_HUE  21   // Orange
 #endif
 
 #define TAPPING_TERM 175
