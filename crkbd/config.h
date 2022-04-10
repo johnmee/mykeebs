@@ -21,3 +21,5 @@
 #endif
 
 #define TAPPING_TERM 175
+#define TAPPING_TOGGLE 1
+#define RGBLIGHT_LAYERS 8

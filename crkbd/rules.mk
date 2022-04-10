@@ -28,4 +28,4 @@ KEY_LOCK_ENABLE = no      # Key locking; artificially hold down a BASIC KEYCODE.
 SPLIT_KEYBOARD = yes      # Dual MCUs need to work together.
 
 OLED_ENABLE = no          # An OLED, or two, is attached.
-TAP_DANCE_ENABLE = yes    # Double, or more, tapping
+TAP_DANCE_ENABLE = no    # Double, or more, tapping
