@@ -23,3 +23,4 @@
 #define TAPPING_TERM 175
 #define TAPPING_TOGGLE 1
 #define RGBLIGHT_LAYERS 8
+#define OLED_TIMEOUT 600000  //ten minutes
