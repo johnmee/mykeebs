@@ -143,6 +143,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                      //`--------------------------'  `--------------------------'
 //  )
 
+#ifdef RGB_MATRIX_ENABLE
+void keyboard_post_init_user(void) {
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+    rgb_matrix_sethsv_noeeprom(HSV_OFF);
+}
+void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    for (uint8_t i = led_min; i <= led_max; i++) {
+        switch(get_highest_layer(layer_state|default_layer_state)) {
+            case 1:
+                rgb_matrix_set_color(i, RGB_BLUE);
+                break;
+            case 2:
+                rgb_matrix_set_color(i, RGB_YELLOW);
+                break;
+            default:
+                rgb_matrix_set_color(i, RGB_ORANGE);
+                break;
+        }
+    }
+}
+#endif
+
 #ifdef RGBLIGHT_ENABLE
 // Light LEDs according to keyboard layer active
 const rgblight_segment_t PROGMEM my_layer0_layer[] = RGBLIGHT_LAYER_SEGMENTS(

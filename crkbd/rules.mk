@@ -15,7 +15,7 @@ BACKLIGHT_ENABLE = no     # Some old thing. Specify the backlights pin in config
 RGBLIGHT_ENABLE = no      # Addressable RGB backlights.
 RGBLIGHT_SLEEP = no       # Turn out the lights when the host sleeps
 RGBLIGHT_SPLIT  = no      # Sync
-RGB_MATRIX_ENABLE = no    # There is an RGB LED on every key.
+RGB_MATRIX_ENABLE = yes    # There is an RGB LED on every key.
 
 MIDI_ENABLE = no          # MIDI is a sound module. We don't have sound.
 UNICODE_ENABLE = no       # Unicode chars via UC(<code point>); covers most languages and symbols but not emojis.

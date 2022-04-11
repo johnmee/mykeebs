@@ -24,3 +24,7 @@
 #define TAPPING_TOGGLE 1
 #define RGBLIGHT_LAYERS 8
 #define OLED_TIMEOUT 600000  //ten minutes
+
+#ifdef RGB_MATRIX_ENABLE
+#define SPLIT_LAYER_STATE_ENABLE yes
+#endif
