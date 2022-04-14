@@ -43,6 +43,33 @@ const uint32_t PROGMEM unicode_map[] = {
 };
 
 
+// WM must be on the left hand (right is on the mouse?)
+// Number pad on the right hand
+// Need modifiers for letter layer!
+// Need modifiers for function keys.
+// Use thumbs; but not too much holding down!
+
+// Third mod needs to be a switch? rather than a mod which is held down.
+
+// where to put clt/alt/gui?!?
+// where to put media keys?
+
+// Left        [qwert, arrows, ?, ?]
+    - qwert
+    - wm
+
+// Right
+    - nums
+
+
+// Base   = [qwerty + (?, func, wmnum)] & [qwerty + (edit, sym, ?)]
+// Edit   = [arrows, pgupdn, space, delete, backspace, enter, shift, ctrl, cut/paste/x/z
+// WMNum  = [left, right, center, scratch,   ]  &  [ numpad ]
+// Symbol = symbols and unicodes
+// Func   = funckeys and media/mods
+
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Base Layer
   [0] = LAYOUT_split_3x6_3(
@@ -53,31 +80,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT,   MO(9),   TT(1),     KC_SPC,   MO(3), KC_RCTL
+                                          KC_LALT,   MO(9),   MO(2),      MO(1),   MO(3), KC_RCTL
                                       //`--------------------------'  `--------------------------'
   ),
-  // Navigation Layer
+
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      WM_PGDN,WM_SC_TG, WM_LEFT, WM_CNTR, WM_RGHT, G(KC_R),                      XXXXXXX, KC_PGUP,  KC_UP,  KC_PGDN, XXXXXXX, _______,
+      WM_PGDN, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), G(KC_R),                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      WM_PGUP, XXXXXXX, KC_LALT, KC_LCTL, KC_LSFT, KC_LGUI,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, _______,
+      WM_PGUP, KC_LGUI, WM_LEFT, WM_CNTR, WM_RGHT,WM_SC_VW,                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     WM_SC_VW, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), XXXXXXX,                      XXXXXXX,  C_LEFT, XXXXXXX,  C_RGHT, XXXXXXX, _______,
+      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, _______,   MO(2)
+                                          _______, _______, XXXXXXX,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
   ),
-  // WM Layer
+
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, _______, _______, _______, _______, _______,                      WM_PGUP, WM_LEFT, WM_CNTR, WM_RGHT, WM_PGDN,WM_SC_VW,
+      _______, _______, _______, _______, _______, _______,                      _______, KC_PGUP,  KC_UP,  KC_PGDN, _______, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, _______, _______,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, _______, _______,                      _______,  C_LEFT, _______,  C_RGHT, _______, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, _______, _______
+                                          _______, _______, XXXXXXX,    KC_RSFT, KC_RCTL, _______
                                       //`--------------------------'  `--------------------------'
   ),
   // Symbols Layer
@@ -101,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         KC_0,    KC_1,    KC_2,    KC_3,  KC_DOT, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_RALT, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_RCTL
+                                          KC_RALT, XXXXXXX, XXXXXXX,    XXXXXXX,    KC_0, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -267,9 +294,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //  // New Layer
 //  [99] = LAYOUT_split_3x6_3(
 //  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-//      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+//      XXXXXXX, XXXXXXX, XXXXXXX,      up, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 //  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+//      XXXXXXX, XXXXXXX,    left,    down,   right, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 //  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 //      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 //  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
