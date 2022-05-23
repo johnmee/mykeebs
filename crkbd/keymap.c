@@ -72,17 +72,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT,   MO(5),   TT(1),    KC_SPC,   MO(3), KC_RCTL
+                                          KC_LCTL,   MO(5),   TT(1),    KC_SPC,   MO(3), KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      WM_PGUP, C(KC_Z), C(KC_X), C(KC_C), C(KC_V),WM_SC_TG,                      _______, KC_PGUP,  KC_UP,  KC_PGDN, _______,  KC_BRK,
+      WM_PGUP, C(KC_Z), C(KC_X), C(KC_C), C(KC_V),WM_SC_TG,                      _______, KC_PGUP,  KC_UP,  KC_PGDN, _______, KC_MPLY,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      WM_PGDN, _______, KC_LALT, KC_LCTL, KC_LSFT,WM_SC_VW,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, _______,
+      WM_PGDN, _______, KC_LALT, KC_LCTL, KC_LSFT,WM_SC_VW,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, KC_VOLU,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LGUI, _______, WM_LEFT, WM_CNTR, WM_RCTR, G(KC_R),                      _______,  C_LEFT, _______,  C_RGHT, _______, _______,
+      KC_LGUI, _______, WM_LEFT, WM_CNTR, WM_RCTR, G(KC_R),                      _______,  C_LEFT, _______,  C_RGHT, _______, KC_VOLD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
@@ -96,17 +96,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS,X(MDASH), XXXXXXX, XXXXXXX, KC_UNDS, KC_PLUS,                      XXXXXXX, KC_LCBR, KC_DQUO, KC_RCBR, KC_BSLS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_MPLY, KC_VOLD, KC_VOLU,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
   [5] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                      XXXXXXX,    KC_7,    KC_8,    KC_9, KC_MINS,  KC_DEL,
+        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX,  KC_DEL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,                      XXXXXXX,    KC_4,    KC_5,    KC_6,  KC_DOT, KC_RALT,
+        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,                      XXXXXXX,    KC_4,    KC_5,    KC_6, XXXXXXX, KC_RALT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,    KC_1,    KC_2,    KC_3, XXXXXXX, KC_RSFT,
+      KC_LALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MINS,    KC_1,    KC_2,    KC_3,  KC_DOT, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LCTL, _______, _______,       KC_0, _______, KC_RCTL
                                       //`--------------------------'  `--------------------------'
@@ -243,53 +243,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 };
 
-
-  // Function Layer... multimedia. lights.
-//  [3] = LAYOUT_split_3x6_3(
-//  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-//      RGB_VAI, RGB_SAI, RGB_HUI, XXXXXXX, XXXXXXX, WM_RSET,                       KC_F10,   KC_F7,   KC_F8,   KC_F9, KC_RGUI, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_F11,   KC_F4,   KC_F5,   KC_F6, KC_RALT, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//        MO(5), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_F12,   KC_F1,   KC_F2,   KC_F3, KC_RCTL, KC_RSFT,
-//  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-//                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
-//                                      //`--------------------------'  `--------------------------'
-//  ),
-  // PaperWM (left) Numpad (right) Layer
-//  [4] = LAYOUT_split_3x6_3(
-//  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-//      KC_LGUI, XXXXXXX,   WM_UP, WM_PGUP, WM_DOWN, WM_FULL,                      XXXXXXX,    KC_7,    KC_8,    KC_9, KC_RGUI, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//    G(KC_TAB), WM_MONL, WM_LEFT, WM_CNTR, WM_RGHT, WM_MONR,                      XXXXXXX,    KC_4,    KC_5,    KC_6, KC_RALT, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//     WM_SC_VW,WM_SC_TG, G(KC_I), WM_PGDN, G(KC_O), G(KC_R),                       KC_DOT,    KC_1,    KC_2,    KC_3, KC_RCTL, KC_RSFT,
-//  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-//                                          XXXXXXX, XXXXXXX, XXXXXXX,       KC_0,    KC_0,  KC_DOT
-//                                      //`--------------------------'  `--------------------------'
-//  ),
-  // Emoji Layer
-//  [5] = LAYOUT_split_3x6_3(
-//  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-//      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     X(NDASH),X(THUMB),X(SMILE), XXXXXXX, XXXXXXX, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     X(MDASH),   X(OK), X(ROFL), X(WINK), XXXXXXX, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-//                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
-//                                      //`--------------------------'  `--------------------------'
-//  ),
-
-//  // New Layer
-//  [99] = LAYOUT_split_3x6_3(
-//  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-//      XXXXXXX, XXXXXXX, XXXXXXX,      up, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//      XXXXXXX, XXXXXXX,    left,    down,   right, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-//  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-//                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
-//                                      //`--------------------------'  `--------------------------'
-//  )
