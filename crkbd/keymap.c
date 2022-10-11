@@ -68,42 +68,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_ENT,
+       KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L,  KC_SPC,  KC_ENT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   MO(5),   MO(1),     KC_SPC,   MO(3), KC_RCTL
+                                          KC_LGUI,   MO(5),   MO(7),      MO(1),   MO(3), KC_RCTL
                                       //`--------------------------'  `--------------------------'
   ),
-  // PaperWM Layer
+
+  // Shift layer.
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      WM_PGUP, C(KC_Z), C(KC_X), C(KC_C), C(KC_V),WM_SC_TG,                      _______, KC_PGUP,  KC_UP,  KC_PGDN, _______, KC_MPLY,
+      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      WM_PGDN, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,WM_SC_VW,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, KC_VOLU,
+      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, _______, WM_LEFT, WM_CNTR, WM_RCTR, G(KC_R),                      _______,  C_LEFT, _______,  C_RGHT, _______, KC_VOLD,
+      _______, _______, _______, _______, _______, _______,                      _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, _______, _______
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
-  // Gnome Layer
-//  [1] = LAYOUT_split_3x6_3(
-//  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-//      _______, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), _______,                      _______, KC_PGUP,  KC_UP,  KC_PGDN, _______, KC_MPLY,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//    G(KC_TAB), KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, KC_VOLU,
-//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//      _______, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),                      _______,  C_LEFT, _______,  C_RGHT, _______, KC_VOLD,
-//  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-//                                          _______, _______, _______,    _______, _______, _______
-//                                      //`--------------------------'  `--------------------------'
-//  ),
+
+  [2] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, XXXXXXX, _______,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      _______, _______, _______, _______, _______, _______,                      _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'  `--------------------------'
+  ),
+
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_GRV, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_LPRN, KC_ASTR, KC_RPRN, KC_AMPR,  KC_DEL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_TILDE,X(NDASH), XXXXXXX, XXXXXXX, KC_MINS,  KC_EQL,                      XXXXXXX, KC_LBRC, KC_DQUO, KC_RBRC, KC_PIPE, _______,
+     KC_TILDE,X(NDASH), XXXXXXX, XXXXXXX, KC_MINS,  KC_EQL,                      XXXXXXX, KC_LBRC, KC_DQUO, KC_RBRC, KC_SCLN, KC_PIPE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS,X(MDASH), XXXXXXX, XXXXXXX, KC_UNDS, KC_PLUS,                      XXXXXXX, KC_LCBR, KC_QUOT, KC_RCBR, KC_BSLS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -121,7 +123,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LCTL, _______, _______,       KC_0, _______, KC_RCTL
                                       //`--------------------------'  `--------------------------'
+  ),
+
+  // PaperWM Layer
+  [7] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      WM_PGUP, C(KC_Z), C(KC_X), C(KC_C), C(KC_V),WM_SC_TG,                      XXXXXXX, KC_PGUP,  KC_UP,  KC_PGDN, XXXXXXX, KC_MPLY,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      WM_PGDN, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,WM_SC_VW,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, KC_VOLU,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      _______, _______, WM_LEFT, WM_CNTR, WM_RCTR, G(KC_R),                      XXXXXXX,  C_LEFT, XXXXXXX,  C_RGHT, XXXXXXX, KC_VOLD,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          _______, _______, _______,    _______, _______, _______
+                                      //`--------------------------'  `--------------------------'
   )
+
 };
 
 #ifdef RGB_MATRIX_ENABLE
@@ -130,16 +146,20 @@ void keyboard_post_init_user(void) {
     rgb_matrix_sethsv_noeeprom(HSV_OFF);
 }
 
+//orange,rose,violet,azure,springgreen,chartreuse
 void rgb_matrix_indicators_user(void) {
         switch(get_highest_layer(layer_state|default_layer_state)) {
             case 1:
-                rgb_matrix_set_color_all(RGB_BLUE);
+                rgb_matrix_set_color_all(RGB_RED);
+                break;
+            case 2:
+                rgb_matrix_set_color_all(RGB_MAGENTA);
                 break;
             case 3:
-                rgb_matrix_set_color_all(RGB_AZURE);
+                rgb_matrix_set_color_all(RGB_BLUE);
                 break;
             case 5:
-                rgb_matrix_set_color_all(RGB_SPRINGGREEN);
+                rgb_matrix_set_color_all(RGB_CYAN);
                 break;
             default:
                 rgb_matrix_set_color_all(RGB_ORANGE);
@@ -147,6 +167,45 @@ void rgb_matrix_indicators_user(void) {
         }
 }
 #endif
+
+
+// Macros
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+
+    // Auto center window when going right with paperwm.
+    case WM_RCTR:
+      if (record->event.pressed) {
+        tap_code16(G(KC_DOT));
+        tap_code16(G(KC_C));
+      }
+      break;
+
+    // Reset gnome display manager.
+    case WM_RSET:
+      if (record->event.pressed) {
+        tap_code16(A(KC_F2));
+        SEND_STRING(SS_DELAY(700) "r" SS_TAP(X_ENT));
+      }
+      break;
+
+  }
+  return true;
+};
+
+
+// Gnome Layer
+//  [1] = LAYOUT_split_3x6_3(
+//  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+//      _______, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), _______,                      _______, KC_PGUP,  KC_UP,  KC_PGDN, _______, KC_MPLY,
+//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+//    G(KC_TAB), KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, KC_VOLU,
+//  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+//      _______, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),                      _______,  C_LEFT, _______,  C_RGHT, _______, KC_VOLD,
+//  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+//                                          _______, _______, _______,    _______, _______, _______
+//                                      //`--------------------------'  `--------------------------'
+//  ),
 
 //#ifdef RGBLIGHT_ENABLE
 //// Light LEDs according to keyboard layer active
@@ -178,6 +237,13 @@ void rgb_matrix_indicators_user(void) {
 //    rgblight_set_layer_state(1, layer_state_cmp(state, 1));
 //    return state;
 //}
+//#endif
+
+//this is a macro, which goes inside process_record_user
+//#ifdef OLED_ENABLE
+//  if (record->event.pressed) {
+//    set_keylog(keycode, record);
+//  }
 //#endif
 
 //#ifdef OLED_ENABLE
@@ -227,30 +293,3 @@ void rgb_matrix_indicators_user(void) {
 //    return true;
 //}
 //#endif
-
-// Macros
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//#ifdef OLED_ENABLE
-//  if (record->event.pressed) {
-//    set_keylog(keycode, record);
-//  }
-//#endif
-  switch (keycode) {
-    // Reset gnome display manager for paperwm.
-    case WM_RSET:
-      if (record->event.pressed) {
-        tap_code16(A(KC_F2));
-        SEND_STRING(SS_DELAY(700) "r" SS_TAP(X_ENT));
-      }
-      break;
-    // Auto center window when going right with paperwm.
-    case WM_RCTR:
-      if (record->event.pressed) {
-        tap_code16(G(KC_DOT));
-        tap_code16(G(KC_C));
-      }
-      break;
-  }
-  return true;
-};
-
